@@ -21,5 +21,6 @@ urlpatterns = [
     path('api/pies/', include('pies.urls')),
     path('api/auth/', include('jwt_auth.urls')),
     path('api/basket/', include('basket_items.urls')),
-    path('api/categories/', include('categories.urls'))
+    path('api/categories/', include('categories.urls')),
+    path('api/reviews/', include('reviews.urls'))
 ]
