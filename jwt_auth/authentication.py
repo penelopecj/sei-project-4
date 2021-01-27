@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.exceptions import PermissionDenied
 from django.contrib.auth import get_user_model
@@ -29,6 +28,3 @@ class JWTAuthentication(BasicAuthentication):
             raise PermissionDenied(detail='User Not Found')
 
         return (user, token)
-=======
-
->>>>>>> development
