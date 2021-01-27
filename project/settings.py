@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'pies',
     'jwt_auth',
+    'basket_items',
 ]
 
 MIDDLEWARE = [
