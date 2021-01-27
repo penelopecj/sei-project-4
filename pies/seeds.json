@@ -27,6 +27,7 @@
     "description": "Pumpkin-flavored custard, ginger, nutmeg; it’s a Thanksgiving classic, in part because you can use your leftover Halloween jack-o-lantern for its stuffing; the pecan pie is its heated rival.",
     "image": "https://img.grouponcdn.com/seocms/3FNe2BxwrZMZrxP2GujcD6yjP69f/671x671_Pumpkin_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 13.50
+  }
 },
 {
   "model": "pies.pie",
