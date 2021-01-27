@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'pies',
     'jwt_auth',
     'basket_items',
+    'categories',
 ]
 
 MIDDLEWARE = [

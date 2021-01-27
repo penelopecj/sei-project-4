@@ -8,6 +8,7 @@ from rest_framework.exceptions import NotFound
 
 from .models import Pie 
 from .serializers.common import PieSerializer
+from .serializers.populated import PopulatedPieSerializer
 
 class PieListView(APIView):
     """ View for GET and POST requests to 'api/pies/' """
@@ -17,7 +18,7 @@ class PieListView(APIView):
         # GET all the pies
         pies = Pie.objects.all()
         # Serialize all the pies
-        serialized_pies = PieSerializer(pies, many=True)
+        serialized_pies = PopulatedPieSerializer(pies, many=True)
         return Response(serialized_pies.data, status=status.HTTP_200_OK)
 
 class PieDetailView(APIView):
@@ -31,6 +32,6 @@ class PieDetailView(APIView):
     
     def get(self, _request, pk):
         pie = self.get_pie(pk=pk)
-        serialized_pie = PieSerializer(pie)
+        serialized_pie = PopulatedPieSerializer(pie)
         return Response(serialized_pie.data, status=status.HTTP_200_OK)
         

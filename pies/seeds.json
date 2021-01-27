@@ -6,7 +6,11 @@
     "name": "Pecan Pie",
     "description": "Pecans, corn syrup (or brown sugar, or both); considered a southern dish, but you’ll find it anywhere you find pies; especially popular as a dessert during Thanksgiving or Christmas; the pumpkin pie is its heated rival.",
     "image": "https://img.grouponcdn.com/seocms/wTfQHKzEZLUy5KECEoSvRugcxqx/671x671_Pecan_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
-    "price": 12.0
+    "price": 12.0,
+    "categories": [
+        1,
+        9
+    ]
   }
 },
 {
@@ -16,7 +20,11 @@
     "name": "Apple Pie",
     "description": "Apples, sugar, and cinnamon, often served with vanilla ice cream on the side; as the Great American Pie, it’s sometimes grouped with baseball and hot dogs as a purely American symbol (though the English and the Dutch have been making pies with apples for centuries)",
     "image": "https://img.grouponcdn.com/seocms/2i7116adj14eoCiYBx8SQLUzXZrq/671x671_Apple_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
-    "price": 6.5
+    "price": 6.5,
+    "categories": [
+        1,
+        4
+    ]
   }
 },
 {
@@ -26,7 +34,11 @@
     "name": "Pumpkin Pie",
     "description": "Pumpkin-flavored custard, ginger, nutmeg; it’s a Thanksgiving classic, in part because you can use your leftover Halloween jack-o-lantern for its stuffing; the pecan pie is its heated rival.",
     "image": "https://img.grouponcdn.com/seocms/3FNe2BxwrZMZrxP2GujcD6yjP69f/671x671_Pumpkin_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
-    "price": 13.50
+    "price": 13.50,
+    "categories": [
+        1,
+        7
+    ]
   }
 },
 {
@@ -36,7 +48,11 @@
     "name": "Key Lime Pie",
     "description": "Lime juice (specifically one from a Key lime), meringue topping, and graham-cracker crust; naturally, the pie is heavily associate with the Florida Keys, and Key West holds a festival for the pie every 4th of July Weekend.",
     "image": "https://img.grouponcdn.com/seocms/MAEqSGQhwmuZ7RsUXWdKF49prF9/671x671_Key_Lime_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
-    "price": 15.75
+    "price": 15.75,
+    "categories": [
+        1,
+        8
+    ]
   }
 },
 {
@@ -46,7 +62,11 @@
     "name": "Cherry Pie",
     "description": "Cherries, namely Montmorency cherries, which are tarter and more sour than your usual Bing cherry; a favorite during the 4th of July; namesake of the 1990 chart-topping hit from glam-rockers Warrant.",
     "image": "https://img.grouponcdn.com/seocms/3K8rjwNK22DKVDZ3u4w7jHiGQpxJ/671x671_Cherry_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
-    "price": 7.00
+    "price": 7.00,
+    "categories": [
+        1,
+        3
+    ]
   }
 },
 {
@@ -56,7 +76,11 @@
     "name": "Lemon Meringue Pie",
     "description": "Lemon custard with a meringue topping; this is that pie with the puffy, enlarged top that looks so soft and inviting, you kinda want to use it as a pillow; it’s also grandma’s favorite pie, often.",
     "image": "https://img.grouponcdn.com/seocms/2mDcvU9LW2DbBuzT1nnTJ1Php6ag/671x671_Lemon_Meringue_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
-    "price": 11.25
+    "price": 11.25,
+    "categories": [
+        1,
+        8
+    ]
   }
 },
 {
@@ -66,7 +90,10 @@
     "name": "Sugar Cream Pie",
     "description": "Brown sugar, butter, and cream; a simple treat, but one of the most addictive types of pies; popular in French and Quebecois cuisines, as well as the Midwest USA, where it is also called “Hoosier Pie” due to its association with Indiana.",
     "image": "https://img.grouponcdn.com/seocms/4UjJMhDwFBf9NzG3ubfXoxs8PKne/671x671_Sugar_Cream_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
-    "price": 10.00
+    "price": 10.00,
+    "categories": [
+        1
+    ]
   }
 },
 {
@@ -76,7 +103,10 @@
     "name": "Cheesecake",
     "description": "First off—yes, this is a pie, since it uses a graham-cracker crust that’s synonymous with pies. The other main ingredient is cream cheese or ricotta, which can be combined with myriad other flavours (mocha, Oreos, peanut butter, etc.)",
     "image": "https://img.grouponcdn.com/seocms/2nfr9xWRPv7VhgDzBQRqe2k5fWkK/671x671_Cheesecake_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
-    "price": 14.30
+    "price": 14.30,
+    "categories": [
+        1
+    ]
   }
 },
 {
@@ -86,7 +116,10 @@
     "name": "Rhubarb Pie",
     "description": "A whole lot of rhubarb, often paired with strawberries; one of the tartest pie flavours; a tempting treat for anyone on the “rhubarb diet” (yes, this is real).",
     "image": "https://img.grouponcdn.com/seocms/3bMub5EFvv4UxLpZTuTYLaCi8Wea/671x671_Rhubarb_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
-    "price": 7.05
+    "price": 7.05,
+    "categories": [
+        1
+    ]
   }
 },
 {
@@ -96,7 +129,10 @@
     "name": "Sweet Potato Pie",
     "description": "Sweet potato filling, often with a dollop of whipped cream on top, sometimes topped with a layer of marshmallows instead; a staple of Southern soul food, especially during the holidays.",
     "image": "https://img.grouponcdn.com/seocms/3xoCQpoQkEbKbHjNpH5vTgPHK7np/671x671_Sweet_Potato_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671.",
-    "price": 8.45
+    "price": 8.45,
+    "categories": [
+        1
+    ]
   }
 },
 {
@@ -106,7 +142,14 @@
     "name": "Pot Pie",
     "description": "The ultimate savory pie; gravy meets chicken, beef, or lamb (plus veggies), tucked inside a pie crust and served steaming hot; second only to chicken-noodle soup for best dishes to enjoy on a cold winter’s day, ideally from inside a log cabin while seated next to a roaring fire.",
     "image": "https://img.grouponcdn.com/seocms/2skWA5yM6c8fQyqxrbC664hJm9A8/pot_pie_jpeg-671x671",
-    "price": 9.99
+    "price": 9.99,
+    "categories": [
+        2,
+        5,
+        6,
+        10,
+        11
+    ]
   }
 },
 {
@@ -116,7 +159,10 @@
     "name": "Peach Pie",
     "description": "Peaches, plus a sprinkling of nutmeg or cinnamon; it’s especially popular in peach-producing regions, like Georgia; some take their love of peach pie to the next level and create “peace pie moonshine” out of peach schnapps and grain alcohol.",
     "image": "https://img.grouponcdn.com/seocms/4FmP5ZxL3yv9befZEwwPWQy789DR/671x671_Peach_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
-    "price": 7.99
+    "price": 7.99,
+    "categories": [
+        1
+    ]
   }
 },
 {
@@ -126,7 +172,12 @@
     "name": "Shepherd's Pie",
     "description": "Shepherd's pie is a ground meat pie with a crust or topping of mashed potato of English origin. The recipe has many variations, but the defining ingredients are ground lamb cooked in a gravy or sauce with onions, and topped with a layer of mashed potato before it is baked.",
     "image": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2019/12/Shepherds-Pie-8.jpg",
-    "price": 8.50
+    "price": 8.50,
+    "categories": [
+        2,
+        5,
+        10
+    ]
   }
 },
 {
@@ -136,7 +187,12 @@
     "name": "Cottage Pie",
     "description": "The name 'cottage pie' was first used at the end of the 18th century. It was around that time that the poorer people of Britain, people who lived in cottages in the country, started using potatoes as an everyday food. Originally, a pie made with any kind of meat and mashed potato was called a 'cottage pie'. Today, this refers specifically to a pie made with ground beef.",
     "image": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/39899463-5F49-4991-B039-9DAA61174AAF/Derivates/5ED71591-8F63-47CA-AC8A-C2DCB1BB17CB.jpg",
-    "price": 7.50
+    "price": 7.50,
+    "categories": [
+        1,
+        5,
+        11
+    ]
   }
 },
 {
@@ -146,7 +202,12 @@
     "name": "Chicken and Mushroom Pie",
     "description": "Chicken and mushroom pie is a common British pie, ranked as one of the most popular types of savoury pie in Great Britain and often served in fish and chips restaurants.",
     "image": "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chickenandmushroompi_89034_16x9.jpg",
-    "price": 11.89
+    "price": 11.89,
+    "categories": [
+        2,
+        5,
+        6
+    ]
   }
 }
 ]

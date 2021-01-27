@@ -1,0 +1,79 @@
+[
+{
+  "model": "categories.category",
+  "pk": 1,
+  "fields": {
+    "name": "Sweet"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 2,
+  "fields": {
+    "name": "Savoury"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 3,
+  "fields": {
+    "name": "Cherry"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 4,
+  "fields": {
+    "name": "Apple"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 5,
+  "fields": {
+    "name": "Meat"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 6,
+  "fields": {
+    "name": "Chicken"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 7,
+  "fields": {
+    "name": "Pumpkin"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 8,
+  "fields": {
+    "name": "Lemon"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 9,
+  "fields": {
+    "name": "Pecan"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 10,
+  "fields": {
+    "name": "Lamb"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 11,
+  "fields": {
+    "name": "Beef"
+  }
+}
+]
