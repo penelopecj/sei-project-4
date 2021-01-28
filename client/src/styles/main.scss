@@ -1,4 +1,17 @@
-body {
-    background-color: #0051BA;
-    color: #FFDA1A;
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+  padding: 20px;
+  font-size: 1.3rem;
+}
+
+main {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.box {
+  border: 1px solid rgb(201, 201, 201);
+  padding: 15px;
 }

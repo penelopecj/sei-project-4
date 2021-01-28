@@ -3,7 +3,7 @@ import React from 'react'
 function Profile() {
   return (
     <main>
-      <p>Hello</p>
+      <h1>My Account</h1>
     </main>
   )
 }
