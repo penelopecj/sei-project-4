@@ -29,8 +29,6 @@ class BasketListView(APIView):
         serialized_items = PopulatedBasketSerializer(basket_items, many=True)
         return Response(serialized_items.data, status=status.HTTP_200_OK)
 
-       
-
 class BasketDetailView(APIView):
     """ Controller for delete requests to /basket_item/id(pk) endpoint """
 
@@ -38,10 +36,10 @@ class BasketDetailView(APIView):
 
     def delete(self, request, pk):
         try:
-            basket_to_delete = BasketItem.objects.get(pk=pk)
+            basket_to_delete = Basket_Item.objects.get(pk=pk)
             if basket_to_delete.owner.id != request.user.id:
                 raise PermissionDenied()
             basket_to_delete.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
-        except BasketItem.DoesNotExist:
+        except Basket_Item.DoesNotExist:
             raise NotFound()
