@@ -8,5 +8,9 @@
     "titleBar.inactiveForeground": "#0051BA",
     "titleBar.activeForeground": "#0051BA",
   },
-  "window.title": "🇸🇪 PIEKEA 🇸🇪"
+  "window.title": "🇸🇪 PIEKEA 🇸🇪",
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
 }
