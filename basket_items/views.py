@@ -20,9 +20,24 @@ class BasketListView(APIView):
             return Response(basket.data, status=status.HTTP_201_CREATED)
         return Response(basket.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
-    def get(self, _request):
+    def get(self, request):
         basket_items = Basket_Item.objects.all()
         serialized_items = BasketSerializer(basket_items, many=True)
+
+        def filterItems(basket_item):
+            if request.user.id == basket_item.owner.id:
+                return basket_item
+            else:
+                return 
+        my_items = filter(filterItems, serialized_items)
+        
+        # JavaScript
+        # my_items = serialized_items.filter(item => {
+        #     if (request.user.id === item.owner.id) {
+        #         return item
+        #     }
+        # })
+
         return Response(serialized_items.data, status=status.HTTP_200_OK)
 
 class BasketDetailView(APIView):
