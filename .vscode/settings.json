@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "/Users/penelopejungreis/.local/share/virtualenvs/sei-project-4-iqT47-8R/bin/python",
+  "python.pythonPath": "/usr/local/opt/python@3.9/bin/python3.9",
   "workbench.colorCustomizations": {
     "statusBar.background": "#FFDA1A",
     "titleBar.activeBackground": "#FFDA1A",
