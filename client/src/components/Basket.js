@@ -3,7 +3,8 @@ import React from 'react'
 function Basket() {
   return (
     <main>
-      <p>Hello</p>
+      <h1>View Basket</h1>
+      <p>Please review and cofirm your order.</p>
     </main>
   )
 }

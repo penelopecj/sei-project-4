@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Nav from './components/common/Nav'
 import Home from './components/common/Home'
 import Profile from './components/Profile'
+import Wishlist from './components/Wishlist'
 import Login from './components/Login'
 import Register from './components/Register'
 import Basket from './components/Basket'
@@ -16,13 +17,14 @@ function App() {
     <BrowserRouter>
       <Nav />
       <Switch>
-        <Route path="/" component={Home} />
         <Route path="/profile" component={Profile} />
+        <Route path="/wishlist" component={Wishlist} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/basket" component={Basket} />
         <Route path="/pies" component={Index} />
         <Route path="/pies/:id" component={Show} />
+        <Route path="/" component={Home} />
       </Switch>
     </BrowserRouter>
   )

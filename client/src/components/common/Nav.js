@@ -13,6 +13,9 @@ function Nav() {
       <Link to="/profile">
         <p>My Account</p>
       </Link>
+      <Link to="/wishlist">
+        <p>Wish List</p>
+      </Link>
       <Link to="/basket">
         <p>Checkout</p>
       </Link>
