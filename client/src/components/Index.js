@@ -40,7 +40,6 @@ function Index() {
         :
         <p>Loading...</p>
       }
-      <p>Hello</p>
     </main>
   )
 }

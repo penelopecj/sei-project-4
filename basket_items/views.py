@@ -5,16 +5,22 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
 from django.contrib.auth import get_user_model
-from django.http import JsonResponse
+# from django.http import JsonResponse
 
 from .serializers.common import BasketSerializer
 from .serializers.populated import PopulatedBasketSerializer
 from .models import Basket_Item
-User = get_user_model()
-class BasketListView(APIView):
-    """ Controller for post request to /basket_item endpoint """
+# User = get_user_model()
 
-    permission_classes = (IsAuthenticated, )
+class BasketListView(APIView):
+    """ Controller for get and post request to /basket endpoint """
+
+    # permission_classes = (IsAuthenticated, )
+
+    def get(self, _request):
+            basket_items = Basket_Item.objects.filter(owner=self.request.user)
+            serialized_items = PopulatedBasketSerializer(basket_items, many=True)
+            return Response(serialized_items.data, status=status.HTTP_200_OK)
 
     def post(self, request):
         request.data["owner"] = request.user.id
@@ -24,15 +30,11 @@ class BasketListView(APIView):
             return Response(basket.data, status=status.HTTP_201_CREATED)
         return Response(basket.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
-    def get(self, _request):
-        basket_items = Basket_Item.objects.filter(owner=self.request.user)
-        serialized_items = PopulatedBasketSerializer(basket_items, many=True)
-        return Response(serialized_items.data, status=status.HTTP_200_OK)
 
 class BasketDetailView(APIView):
     """ Controller for delete requests to /basket_item/id(pk) endpoint """
 
-    permission_classes = (IsAuthenticated, )
+    # permission_classes = (IsAuthenticated, )
 
     def delete(self, request, pk):
         try:
