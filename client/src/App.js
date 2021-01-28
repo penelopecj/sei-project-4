@@ -16,13 +16,13 @@ function App() {
     <BrowserRouter>
       <Nav />
       <Switch>
-        <Route path="/" component={Home} />
         <Route path="/profile" component={Profile} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/basket" component={Basket} />
         <Route path="/pies" component={Index} />
         <Route path="/pies/:id" component={Show} />
+        <Route path="/" component={Home} />
       </Switch>
     </BrowserRouter>
   )
