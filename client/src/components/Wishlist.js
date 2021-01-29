@@ -1,19 +1,20 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 import { isAuthenticated } from './lib/auth'
 import { getSingleUser } from './lib/api'
+// import { getPayload, getToken } from './lib/auth'
 
 function Wishlist() {
   const isLoggedIn = isAuthenticated()
   const [user, setUser] = React.useState(null)
   //const [hasError, setHasError] = React.useState(false)
 
-  const { id } = useParams()
+  // const { id } = useParams()
 
   React.useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await getSingleUser(id)
+        const { data } = await getSingleUser()
         setUser(data)
 
       } catch (err) {
@@ -22,10 +23,10 @@ function Wishlist() {
       }
     }
     getData()
-  }, [id])
+  }, [])
 
   console.log(user) 
-  console.log(isLoggedIn) 
+  console.log('User is logged in', isLoggedIn) 
 
   return (
     <main>

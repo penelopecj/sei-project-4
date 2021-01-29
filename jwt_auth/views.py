@@ -58,17 +58,17 @@ class ProfileView(APIView):
         # Populated
         return Response(serialized_user.data, status=status.HTTP_200_OK)
 
-class UserView(APIView):
+# class UserView(APIView):
 
-    def get(self, _request):
-        users = User.objects.all()
-        serialized_users = UserSerializer(users, many=True)
-        return Response(serialized_users.data, status=status.HTTP_200_OK)
+#     def get(self, _request):
+#         users = User.objects.all()
+#         serialized_users = UserSerializer(users, many=True)
+#         return Response(serialized_users.data, status=status.HTTP_200_OK)
 
-class UserDetailView(APIView):
-    """ View for GET requests to 'api/auth/users/pk/' """
+# # class UserDetailView(APIView):
+# #     """ View for GET requests to 'api/auth/users/pk/' """
 
-    def get(self, _request, pk):
-        user = User.objects.get(pk=pk)
-        serialized_user = UserSerializer(user)
-        return Response(serialized_user.data, status=status.HTTP_200_OK)
+# #     def get(self, _request, pk):
+# #         user = User.objects.get(pk=pk)
+# #         serialized_user = UserSerializer(user)
+# #         return Response(serialized_user.data, status=status.HTTP_200_OK)
