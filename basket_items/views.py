@@ -15,12 +15,12 @@ from .models import Basket_Item
 class BasketListView(APIView):
     """ Controller for get and post request to /basket endpoint """
 
-    # permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated, )
 
     def get(self, _request):
-            basket_items = Basket_Item.objects.filter(owner=self.request.user)
-            serialized_items = PopulatedBasketSerializer(basket_items, many=True)
-            return Response(serialized_items.data, status=status.HTTP_200_OK)
+        basket_items = Basket_Item.objects.filter(owner=self.request.user)
+        serialized_items = PopulatedBasketSerializer(basket_items, many=True)
+        return Response(serialized_items.data, status=status.HTTP_200_OK)
 
     def post(self, request):
         request.data["owner"] = request.user.id
@@ -34,7 +34,7 @@ class BasketListView(APIView):
 class BasketDetailView(APIView):
     """ Controller for delete requests to /basket_item/id(pk) endpoint """
 
-    # permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated, )
 
     def delete(self, request, pk):
         try:
