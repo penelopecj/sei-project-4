@@ -1,5 +1,6 @@
 import React from 'react'
 import { getBasket } from './lib/api'
+import { Button } from 'semantic-ui-react'
 
 
 function Basket() {
@@ -27,10 +28,24 @@ function Basket() {
     <main>
       <h1>View Basket</h1>
       <p>Please review and cofirm your order.</p>
-      {basket ?
-        <p>{basket[0].product.name}</p>
+      
+      {basket && basket.length > 0 ?
+        <div className="checkout-basket">
+          {basket.map(pie => {
+            return (
+              <div className="flex-box" key={pie.id}>
+                <img src={pie.product.image} alt={pie.product.name} />
+                <h3>{pie.product.name}</h3>
+                <p>£{pie.product.price}</p>
+                <p>Quantity:{pie.quantity}</p>
+              </div>
+            )
+          })
+          }
+          <Button>Checkout</Button>
+        </div>
         :
-        <p>Loading basket items...</p>
+        <p>Your basket is empty...</p>
       }
       
     </main>
