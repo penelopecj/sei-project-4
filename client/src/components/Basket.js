@@ -27,6 +27,12 @@ function Basket() {
     <main>
       <h1>View Basket</h1>
       <p>Please review and cofirm your order.</p>
+      {basket ?
+        <p>{basket[0].product.name}</p>
+        :
+        <p>Loading basket items...</p>
+      }
+      
     </main>
   )
 }

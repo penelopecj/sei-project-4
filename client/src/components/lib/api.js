@@ -17,8 +17,8 @@ export function getAllUsers() {
   return axios.get(`${baseUrl}/auth/users`, headers())
 }
 
-export function getSingleUser(id) {
-  return axios.get(`${baseUrl}/auth/users/${id}`, headers())
+export function getSingleUser() {
+  return axios.get(`${baseUrl}/auth/user`, headers())
 }
 
 export function getBasket() {
