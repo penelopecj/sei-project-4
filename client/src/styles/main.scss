@@ -20,6 +20,7 @@ main {
 .box {
   border: 1px solid rgb(201, 201, 201);
   padding: 15px;
+<<<<<<< HEAD
   border-radius: 7px;
   box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.2);
 }
@@ -67,4 +68,10 @@ main {
   ul {
     list-style-type: none;
   }
+=======
+}
+
+.flex-box {
+  display: flex;
+>>>>>>> development
 }
