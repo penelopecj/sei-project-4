@@ -1,22 +1,17 @@
 import React from 'react'
-// import { useParams } from 'react-router-dom'
-import { isAuthenticated } from './lib/auth'
+// import { isAuthenticated } from './lib/auth'
 import { getSingleUser } from './lib/api'
-// import { getPayload, getToken } from './lib/auth'
 
 function Wishlist() {
-  const isLoggedIn = isAuthenticated()
+  // const isLoggedIn = isAuthenticated()
   const [user, setUser] = React.useState(null)
   //const [hasError, setHasError] = React.useState(false)
-
-  // const { id } = useParams()
 
   React.useEffect(() => {
     const getData = async () => {
       try {
         const { data } = await getSingleUser()
         setUser(data)
-
       } catch (err) {
         console.log(err)
         //setHasError(true)
@@ -25,13 +20,23 @@ function Wishlist() {
     getData()
   }, [])
 
-  console.log(user) 
-  console.log('User is logged in', isLoggedIn) 
-
   return (
     <main>
-      <h1>Wishlist</h1>
-      <p>Your favourite items here</p>
+      <h1>Wish List</h1>
+      <p>Manage your <u>Wish lists</u></p>
+      {user ?
+        <ul>
+          {user.favourites.map(fav => {
+            return (<li key={fav.id}>
+              <img src={fav.image} alt={fav.name} />
+              <h3>{fav.name}</h3>
+              <p>£{fav.price}</p>
+            </li>)
+          })}
+        </ul>
+        :
+        <p>Loading...</p>
+      }
     </main>
   )
 }
