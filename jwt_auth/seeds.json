@@ -1,0 +1,106 @@
+[
+{
+  "model": "jwt_auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$EndEtMUXlKYV$Mufp2CpfOTib6oW0vaCoBPKOSFJ1pLv0gt+qoZykTqQ=",
+    "last_login": "2021-01-28T14:28:23.721Z",
+    "is_superuser": true,
+    "username": "admin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-01-28T14:27:49.956Z",
+    "email": "admin@email.com",
+    "first_name": "Admin",
+    "last_name": "istrator",
+    "address": "123 Fun Street",
+    "phone_number": "123456789",
+    "profile_image": "https://i.stack.imgur.com/l60Hf.png",
+    "groups": [],
+    "user_permissions": [],
+    "favourites": [
+      1,
+      6,
+      12
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pass",
+    "last_login": "2021-01-28T14:28:50Z",
+    "is_superuser": false,
+    "username": "jack",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-28T14:28:33Z",
+    "email": "jack@email.com",
+    "first_name": "Jack",
+    "last_name": "May",
+    "address": "10 General Assembly",
+    "phone_number": "123456778",
+    "profile_image": "https://i.stack.imgur.com/l60Hf.png",
+    "groups": [],
+    "user_permissions": [],
+    "favourites": [
+      9,
+      13,
+      15
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$m6q7ZO2FrfhY$C/QEaVQPVyW1Vm4sjkmf11KWeQMXBKf3JXvGoudiGMw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "penny",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-28T14:40:05.574Z",
+    "email": "penny@email.com",
+    "first_name": "Penny",
+    "last_name": "Jungreis",
+    "address": "123 djsnvdfjsv",
+    "phone_number": "123456789",
+    "profile_image": "https://i.stack.imgur.com/l60Hf.png",
+    "groups": [],
+    "user_permissions": [],
+    "favourites": [
+      1,
+      4,
+      8
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pass",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "edwyn",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-28T14:40:05.574Z",
+    "email": "edwyn@email.com",
+    "first_name": "Edwyn",
+    "last_name": "Abi-Acar",
+    "address": "123 djsnvdfjsv",
+    "phone_number": "123456789",
+    "profile_image": "https://i.stack.imgur.com/l60Hf.png",
+    "groups": [],
+    "user_permissions": [],
+    "favourites": [
+      2,
+      5,
+      16
+    ]
+  }
+}
+]
