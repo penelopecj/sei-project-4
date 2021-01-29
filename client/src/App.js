@@ -5,8 +5,8 @@ import Nav from './components/common/Nav'
 import Home from './components/common/Home'
 import Profile from './components/Profile'
 import Wishlist from './components/Wishlist'
-import Login from './components/Login'
-import Register from './components/Register'
+import Login from './components/auth/Login'
+import Register from './components/auth/Register'
 import Basket from './components/Basket'
 import Index from './components/Index'
 import Show from './components/Show'
@@ -17,14 +17,16 @@ function App() {
     <BrowserRouter>
       <Nav />
       <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/pies/:id" component={Show} />
         <Route path="/profile" component={Profile} />
         <Route path="/wishlist" component={Wishlist} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/basket" component={Basket} />
         <Route path="/pies" component={Index} />
-        <Route path="/pies/:id" component={Show} />
-        <Route path="/" component={Home} />
+       
+       
       </Switch>
     </BrowserRouter>
   )

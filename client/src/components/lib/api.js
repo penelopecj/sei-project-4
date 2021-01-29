@@ -24,3 +24,11 @@ export function getSingleUser() {
 export function getBasket() {
   return axios.get(`${baseUrl}/basket`, headers())
 }
+
+export function registerUser(formdata) {
+  return axios.post(`${baseUrl}/auth/register/`, formdata)
+}
+
+export function loginUser(formdata) {
+  return axios.post(`${baseUrl}/auth/login/`, formdata)
+}
