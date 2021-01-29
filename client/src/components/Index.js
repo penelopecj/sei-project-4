@@ -29,7 +29,7 @@ function Index() {
         <div>
           {pies.map(pie => {
             return (
-              <div key={pie.pk}>
+              <div key={pie.id}>
                 {pie.name}
               </div>
             

@@ -19,7 +19,7 @@ function Login() {
     try {
       const { data } = await loginUser(formdata)
       setToken(data.token)
-      history.push('/spaces')
+      history.push('/pies')
     } catch (err) {
       setError(true)
     }

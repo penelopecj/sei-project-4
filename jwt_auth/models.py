@@ -8,4 +8,4 @@ class User(AbstractUser):
     address = models.CharField(max_length=100, blank=True)
     phone_number = models.CharField(max_length=50, blank=True)
     profile_image = models.CharField(max_length=300, blank=True)
-    favourites = models.ManyToManyField('pies.Pie', related_name='users')
+    favourites = models.ManyToManyField('pies.Pie', related_name='users', blank=True)
