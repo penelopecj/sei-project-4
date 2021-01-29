@@ -6,7 +6,8 @@
           "text": "Penny's pumpkin pie was the prettiest pumpkin pie I ever picked!",
           "rating": 5,
           "created_at": "2021-01-27T22:27:36.025Z",
-          "pie": 3
+          "pie": 3,
+          "owner": 1
       }
   },
   {
@@ -16,7 +17,8 @@
           "text": "An average shepherds pie, nothing to write home about.",
           "rating": 3,
           "created_at": "2021-01-27T22:28:49.973Z",
-          "pie": 13
+          "pie": 13,
+          "owner": 1
       }
   },
   {
@@ -26,7 +28,8 @@
           "text": "I LOVED this pie!!!",
           "rating": 1,
           "created_at": "2021-01-27T22:31:35.469Z",
-          "pie": 6
+          "pie": 6,
+          "owner": 1
       }
   },
   {
@@ -36,7 +39,8 @@
           "text": "2nd best pie EVERRR!!!",
           "rating": 4,
           "created_at": "2021-01-27T22:32:10.157Z",
-          "pie": 12
+          "pie": 12,
+          "owner": 1
       }
   },
   {
@@ -46,7 +50,8 @@
           "text": "I love the extra Bourbon in this recipe, gives a nice sweetness and zing!",
           "rating": 5,
           "created_at": "2021-01-27T22:32:10.157Z",
-          "pie": 1
+          "pie": 1,
+          "owner": 1
       }
   },
   {
@@ -56,7 +61,8 @@
           "text": "There's nothing more American than applie pie.",
           "rating": 5,
           "created_at": "2021-01-27T22:32:10.157Z",
-          "pie": 2
+          "pie": 2,
+          "owner": 1
       }
   },
   {
@@ -66,7 +72,8 @@
           "text": "Apple pie is DUTCH!!! 🤬",
           "rating": 2,
           "created_at": "2021-01-27T22:32:10.157Z",
-          "pie": 2
+          "pie": 2,
+          "owner": 1
       }
   },
   {
@@ -76,7 +83,8 @@
           "text": "Guys everyone knows that apple pie is Swedish... all the best things come from Sweden.....",
           "rating": 3,
           "created_at": "2021-01-27T22:32:10.157Z",
-          "pie": 2
+          "pie": 2,
+          "owner": 1
       }
   },
   {
@@ -86,7 +94,8 @@
           "text": "Sweet and tart, what more could you want?",
           "rating": 4,
           "created_at": "2021-01-27T22:32:10.157Z",
-          "pie": 5
+          "pie": 5,
+          "owner": 1
       }
   },
   {
@@ -96,7 +105,8 @@
           "text": "Cheesecake is NOT a pie wtf??!! 🤯",
           "rating": 1,
           "created_at": "2021-01-27T22:32:10.157Z",
-          "pie": 8
+          "pie": 8,
+          "owner": 1
       }
   },
   {
@@ -106,7 +116,8 @@
       "text": "Just because it has pie in the name doesn't mean it's a pie...",
       "rating": 2,
       "created_at": "2021-01-27T22:32:10.157Z",
-      "pie": 13
+      "pie": 13,
+      "owner": 1
   }
   },
   {
@@ -116,7 +127,8 @@
           "text": "What even is the difference between shepherds pie and cottage pie??? I have always wanted to know",
           "rating": 5,
           "created_at": "2021-01-27T22:32:10.157Z",
-          "pie": 14
+          "pie": 14,
+          "owner": 1
       }
   },
   {
@@ -126,7 +138,8 @@
       "text": "The most British of the pies.",
       "rating": 5,
       "created_at": "2021-01-27T22:32:10.157Z",
-      "pie": 15
+      "pie": 15,
+      "owner": 1
   }
   },
   {
@@ -136,7 +149,8 @@
           "text": "Makes me miss pubs ughh!! 💔",
           "rating": 5,
           "created_at": "2021-01-27T22:32:10.157Z",
-          "pie": 15
+          "pie": 15,
+          "owner": 1
       }
   },
   {
@@ -146,7 +160,8 @@
           "text": "What even is rhubarb???",
           "rating": 3,
           "created_at": "2021-01-27T22:32:10.157Z",
-          "pie": 9
+          "pie": 9,
+          "owner": 1
       }
   }
 ]

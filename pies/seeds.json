@@ -33,7 +33,7 @@
   "model": "pies.pie",
   "pk": 3,
   "fields": {
-    "name": "Pumpkin Pie",
+    "name": "Thanksgiving Pumpkin Pie",
     "description": "Pumpkin-flavored custard, ginger, nutmeg; it’s a Thanksgiving classic, in part because you can use your leftover Halloween jack-o-lantern for its stuffing; the pecan pie is its heated rival.",
     "image": "https://img.grouponcdn.com/seocms/3FNe2BxwrZMZrxP2GujcD6yjP69f/671x671_Pumpkin_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 13.50,
@@ -63,7 +63,7 @@
   "model": "pies.pie",
   "pk": 5,
   "fields": {
-    "name": "Cherry Pie",
+    "name": "Montmorency Cherry Pie",
     "description": "Cherries, namely Montmorency cherries, which are tarter and more sour than your usual Bing cherry; a favorite during the 4th of July; namesake of the 1990 chart-topping hit from glam-rockers Warrant.",
     "image": "https://img.grouponcdn.com/seocms/3K8rjwNK22DKVDZ3u4w7jHiGQpxJ/671x671_Cherry_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 7.00,
@@ -94,7 +94,7 @@
   "pk": 7,
   "fields": {
     "name": "Sugar Cream Pie",
-    "description": "Brown sugar, butter, and cream; a simple treat, but one of the most addictive types of pies; popular in French and Quebecois cuisines, as well as the Midwest USA, where it is also called "Hoosier Pie" due to its association with Indiana.",
+    "description": "Brown sugar, butter, and cream; a simple treat, but one of the most addictive types of pies; popular in French and Quebecois cuisines, as well as the Midwest USA, where it is also called 'Hoosier Pie' due to its association with Indiana.",
     "image": "https://img.grouponcdn.com/seocms/4UjJMhDwFBf9NzG3ubfXoxs8PKne/671x671_Sugar_Cream_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 10.00,
     "categories": [
@@ -120,7 +120,7 @@
   "pk": 9,
   "fields": {
     "name": "Rhubarb Pie",
-    "description": "A whole lot of rhubarb, often paired with strawberries; one of the tartest pie flavours; a tempting treat for anyone on the "rhubarb diet" (yes, this is real).",
+    "description": "A whole lot of rhubarb, often paired with strawberries; one of the tartest pie flavours; a tempting treat for anyone on the 'rhubarb diet' (yes, this is real).",
     "image": "https://img.grouponcdn.com/seocms/3bMub5EFvv4UxLpZTuTYLaCi8Wea/671x671_Rhubarb_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 7.05,
     "categories": [
@@ -165,7 +165,7 @@
   "pk": 12,
   "fields": {
     "name": "Peach Pie",
-    "description": "Peaches, plus a sprinkling of nutmeg or cinnamon; it’s especially popular in peach-producing regions, like Georgia; some take their love of peach pie to the next level and create "peace pie moonshine" out of peach schnapps and grain alcohol.",
+    "description": "Peaches, plus a sprinkling of nutmeg or cinnamon; it’s especially popular in peach-producing regions, like Georgia; some take their love of peach pie to the next level and create 'peace pie moonshine' out of peach schnapps and grain alcohol.",
     "image": "https://img.grouponcdn.com/seocms/4FmP5ZxL3yv9befZEwwPWQy789DR/671x671_Peach_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 7.99,
     "categories": [
@@ -355,7 +355,7 @@
   "pk": 25,
   "fields": {
     "name": "Cherry Pie",
-    "description": "Cherry pie is a  pie baked with a  cherry  filling. Traditionally, cherry pie is made with tart rather than sweet cherries. Morello cherries  are one of the most common kinds of cherry used, but other varieties such as the black cherry may also be used.",
+    "description": "Cherry pie is a  pie baked with a cherry  filling. Traditionally, cherry pie is made with tart rather than sweet cherries. Morello cherries  are one of the most common kinds of cherry used, but other varieties such as the black cherry may also be used.",
     "image": "https://images-gmi-pmc.edge-generalmills.com/c8bfdd71-ed78-41a2-9a4e-f02b72be3afe.jpg",
     "price": 3.16,
     "categories": [
