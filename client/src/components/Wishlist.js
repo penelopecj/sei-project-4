@@ -24,19 +24,25 @@ function Wishlist() {
     <main>
       <h1>Wish List</h1>
       <p>Manage your <u>Wish lists</u></p>
-      {user ?
-        <ul>
-          {user.favourites.map(fav => {
-            return (<li key={fav.id}>
-              <img src={fav.image} alt={fav.name} />
-              <h3>{fav.name}</h3>
-              <p>£{fav.price}</p>
-            </li>)
-          })}
-        </ul>
-        :
-        <p>Loading...</p>
-      }
+      <section className="wishlist">
+        {user ?
+          <ul>
+            {user.favourites.map(fav => {
+              return (
+                <li key={fav.id} className="box product flex-box">
+                  <img src={fav.image} alt={fav.name} />
+                  <div>
+                    <h3>{fav.name}</h3>
+                    <p>£{fav.price}</p>
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+          :
+          <p>Loading...</p>
+        }
+      </section>
     </main>
   )
 }

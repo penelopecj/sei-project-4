@@ -1,3 +1,9 @@
+
+// box model hack
+* {
+  box-sizing: border-box;
+} 
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -14,4 +20,51 @@ main {
 .box {
   border: 1px solid rgb(201, 201, 201);
   padding: 15px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.2);
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-index {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 32%;
+  margin-bottom: 10px;
+
+  a {
+    color: black;
+  }
+  
+
+  p {
+    font-weight: bold;
+  }
+
+  figure {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 7px;
+  }
+}
+
+.product:hover {
+  background-color: rgb(248, 248, 248);
+}
+
+.wishlist {
+  ul {
+    list-style-type: none;
+  }
 }

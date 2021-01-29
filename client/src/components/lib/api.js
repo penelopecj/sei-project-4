@@ -13,6 +13,10 @@ export function getAllPies() {
   return axios.get(`${baseUrl}/pies`)
 }
 
+export function getSinglePie(id) {
+  return axios.get(`${baseUrl}/pies/${id}`)
+}
+
 export function getAllUsers() {
   return axios.get(`${baseUrl}/auth/users`, headers())
 }
