@@ -26,7 +26,6 @@ function Profile() {
     getData()
   }, [])
 
-  console.log(user)
   return (
     <main>
       <h1>My Account</h1>
