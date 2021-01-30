@@ -24,15 +24,15 @@ function PieCategoriesView() {
     getPies()
   }, [])
 
-  const filterPies = (category) => {
-    if (category === 'View All') {
-      return pies
-    } else {
-      return pies.filter(pie => {
-        return pie.tags.includes(category)
-      })
-    }
-  }
+  // const filterPies = (category) => {
+  //   if (category === 'View All') {
+  //     return pies
+  //   } else {
+  //     return pies.filter(pie => {
+  //       return pie.tags.includes(category)
+  //     })
+  //   }
+  // }
 
   const selectedCategory = (e) => {
     const value = e.target.innerHTML.replace('&amp;', '&')
