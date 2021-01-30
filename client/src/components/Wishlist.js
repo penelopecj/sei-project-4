@@ -1,6 +1,7 @@
 import React from 'react'
 // import { isAuthenticated } from './lib/auth'
 import { getSingleUser } from './lib/api'
+import { Link } from 'react-router-dom'
 
 function Wishlist() {
   // const isLoggedIn = isAuthenticated()
@@ -20,6 +21,8 @@ function Wishlist() {
     getData()
   }, [])
 
+  console.log(user)
+
   return (
     <main>
       <h1>Wish List</h1>
@@ -29,12 +32,18 @@ function Wishlist() {
           <ul>
             {user.favourites.map(fav => {
               return (
-                <li key={fav.id} className="box product flex-box">
-                  <img src={fav.image} alt={fav.name} />
-                  <div>
-                    <h3>{fav.name}</h3>
-                    <p>£{fav.price}</p>
-                  </div>
+                <li key={fav.id} className="box">
+                  <Link to={`pies/${fav.id}`} className="flex-box space-between">
+                    <figure>
+                      <img src={fav.image} alt={fav.name} />
+                    </figure>
+                    <div>
+                      <h3>{fav.name}</h3>
+                      <h4>£{fav.price}</h4>
+                      <p>{fav.description}</p>
+                    </div>
+                  </Link>
+                  
                 </li>
               )
             })}

@@ -25,8 +25,6 @@ function App() {
         <Route path="/register" component={Register} />
         <Route path="/basket" component={Basket} />
         <Route path="/pies" component={Index} />
-       
-       
       </Switch>
     </BrowserRouter>
   )

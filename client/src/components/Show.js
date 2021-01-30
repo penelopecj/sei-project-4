@@ -24,7 +24,7 @@ function Show() {
 
 
   return (
-    <main>
+    <main className="show-page">
       {pie ?
         
         <section className="box">

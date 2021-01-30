@@ -5,7 +5,12 @@ function Nav() {
   return (
     <nav>
       <Link to="/">
-        <p><strong>PIEKEA</strong></p>
+        <div className="logo">
+          <span>
+            <p>PIEKEA</p>
+            <small>®</small>
+          </span>
+        </div>
       </Link>
       <Link to="/pies">
         <p>All Pies</p>

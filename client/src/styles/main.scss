@@ -1,4 +1,8 @@
 
+$ikea-blue: #175fac;
+$ikea-yellow: #FFDA1A;
+$light-grey: rgb(201, 201, 201);
+$lightest-grey: rgb(248, 248, 248);
 // box model hack
 * {
   box-sizing: border-box;
@@ -7,26 +11,78 @@
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%; 
   padding: 20px;
   font-size: 1.3rem;
+
+  a {
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  a:hover {
+    color: black;
+    background-color: $lightest-grey;
+  }
 }
 
 main {
-  margin: 0 auto;
-  width: 90%;
+  margin: 2rem auto;
+  width: 80%;
+  padding-bottom: 4rem;
+}
+
+//Overrides the main tag styling on these pages
+.narrow-page {
+  width: 60%;
+}
+
+.blue-background {
+  background-color: $ikea-blue;
+  color: white;
 }
 
 .box {
-  border: 1px solid rgb(201, 201, 201);
+  border: 1px solid $light-grey;
   padding: 15px;
   border-radius: 7px;
   box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.2);
 }
 
+.black-underline {
+  border-bottom: 2px solid black;
+}
+
 .space-between {
   display: flex;
   justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+  min-height: 80px;
+}
+
+.logo {
+  color: $ikea-blue;
+  background-color: $ikea-blue;
+  border: 2px solid $ikea-blue;
+  span {
+    background-color: $ikea-yellow;
+    border-radius: 100px;
+    padding: 0 10px;
+    display: flex;
+  }
+  p {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  small {
+    font-size: 0.6rem;
+  }
 }
 
 .product-index {
@@ -60,15 +116,91 @@ main {
 }
 
 .product:hover {
-  background-color: rgb(248, 248, 248);
+  background-color: $lightest-grey;
 }
 
 .wishlist {
   ul {
     list-style-type: none;
+    li {
+      margin-bottom: 15px;
+    }
+
+    li:hover {
+      background-color: $lightest-grey;
+    }
+
+    figure {
+      width: 30%;
+
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+
+    div {
+      width: 70%;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    a {
+      color: black;
+    }
   }
 }
 
 .flex-box {
   display: flex;
+}
+
+.basket-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid $light-grey;
+  
+  figure {
+    width: 20%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.total {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.checkout-btn {
+  width: 100%;
+  border: none;
+  border-radius: 40px;
+  padding: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.show-page {
+
+  h1, h3 {
+    text-align: center;
+  }
+
+  h3 {
+    color: rgb(71, 176, 41);
+  }
+
+  figure {
+    width: 50%;
+    margin: 1rem auto;
+
+    img {
+      border-radius: 15px;
+      width: 100%;
+    }
+  }
+  
 }
