@@ -26,13 +26,18 @@ function Profile() {
     getData()
   }, [])
 
-
   return (
     <main>
       <h1>My Account</h1>
       {user ?
         <section className="box">
-          <h2>Hello, {user.username}!</h2>
+          <h2>Hello, {user.firstName} {user.lastName}!</h2>
+          <p>Profile Image: {user.profileImage}</p>
+          <h3>Your details are shown below:</h3>
+          <h4>Username: {user.username}</h4>
+          <h4>Email address: {user.email}</h4>
+          <h4>Address: {user.address}</h4>
+          <h4>Phone number: {user.phoneNumber}</h4>
         </section>
         :
         <p>Loading...</p>

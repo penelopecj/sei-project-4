@@ -39,6 +39,7 @@ function Show() {
   }
 
 
+  console.log(pie)
   return (
     <main className="show-page">
       {pie ?
@@ -53,7 +54,8 @@ function Show() {
           {pie.categories && pie.categories.length > 0 ?
             <ul>
               {pie.categories.map(category => {
-                return <li key={category.id}><Link to="/pies">{category.name}
+                return <li key={category.id}><Link 
+                  to={`/pies/${category.name}`}>{category.name}
                 </Link></li>
               })}
             </ul>
