@@ -23,20 +23,13 @@ function Basket() {
 
   const handleRemoveFromBasket = async (event) => {
     try {
-      // await deleteBasketItem(event.target.id)
-      // const { data } = await getAllBasketItems()
-      // setBasketItems(data) 
-
-      console.log(event.target.name)
-
-      if (event === false) { 
-        console.log(deleteBasketItem) 
-      }
+      await deleteBasketItem(event.target.id)
+      const { data } = await getAllBasketItems()
+      setBasketItems(data) 
     } catch (err) {
       console.log(err)
     }
   }
-  console.log(basketItems)
 
   return (
     <main className="narrow-page">
@@ -55,7 +48,7 @@ function Basket() {
                   <h3>{item.product.name}</h3>
                   <p><strong>£{item.product.price}</strong></p>
                   <p>Quantity: <span className="box">{item.quantity} ⌵</span></p>
-                  <p onClick={handleRemoveFromBasket} name={item.product.id}>Remove</p>
+                  <p onClick={handleRemoveFromBasket} id={item.id} className="remove-btn">Remove</p>
                   <p>Add to your wish list</p>
                 </div>
               </div>
