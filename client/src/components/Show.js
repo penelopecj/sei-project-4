@@ -1,11 +1,14 @@
 import React from 'react'
-import { getSinglePie } from './lib/api'
-import { useParams, Link } from 'react-router-dom'
+import { getSinglePie, createBasketItem } from './lib/api'
+import { useParams, Link, useHistory } from 'react-router-dom'
 
 function Show() {
-  const [pie, setPie] = React.useState(null)  //const [hasError, setHasError] = React.useState(false)
+  const [pie, setPie] = React.useState(null) 
+  //const [user, setUser] = React.useState(null)
+  //const [hasError, setHasError] = React.useState(false)
 
   const { id } = useParams()
+  const history = useHistory()
 
 
   React.useEffect(() => {
@@ -21,6 +24,19 @@ function Show() {
     }
     getData()
   }, [id])
+
+
+  const handleAddToBasket = async () => {
+    try {
+      await createBasketItem({
+        quantity: 1,
+        product: id
+      })
+      history.push('/basket/')
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
 
   return (
@@ -44,6 +60,7 @@ function Show() {
             :
             <ul></ul>
           }
+          <button onClick={handleAddToBasket} className="blue-background checkout-btn">Add to shopping bag</button>
           <h2>What customers are saying about {pie.name}</h2>
           {pie.reviews && pie.reviews.length > 0 ?
             <section>

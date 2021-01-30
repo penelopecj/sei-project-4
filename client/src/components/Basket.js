@@ -1,5 +1,5 @@
 import React from 'react'
-import { getBasket } from './lib/api'
+import { getAllBasketItems, deleteBasketItem } from './lib/api'
 //import { Button } from 'semantic-ui-react'
 
 
@@ -11,7 +11,7 @@ function Basket() {
   React.useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await getBasket()
+        const { data } = await getAllBasketItems()
         setBasketItems(data) 
       } catch (err) {
         console.log(err)
@@ -20,7 +20,23 @@ function Basket() {
     }
     getData()
   }, [])
-  
+
+  const handleRemoveFromBasket = async (event) => {
+    try {
+      // await deleteBasketItem(event.target.id)
+      // const { data } = await getAllBasketItems()
+      // setBasketItems(data) 
+
+      console.log(event.target.name)
+
+      if (event === false) { 
+        console.log(deleteBasketItem) 
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  console.log(basketItems)
 
   return (
     <main className="narrow-page">
@@ -29,17 +45,17 @@ function Basket() {
       
       {basketItems && basketItems.length > 0 ?
         <div className="checkout-basket">
-          {basketItems.map(pie => {
+          {basketItems.map(item => {
             return (
-              <div className="flex-box basket-item" key={pie.id}>
+              <div className="flex-box basket-item" key={item.id}>
                 <figure>
-                  <img src={pie.product.image} alt={pie.product.name} />
+                  <img src={item.product.image} alt={item.product.name} />
                 </figure>
                 <div>
-                  <h3>{pie.product.name}</h3>
-                  <p><strong>£{pie.product.price}</strong></p>
-                  <p>Quantity: <span className="box">{pie.quantity} ⌵</span></p>
-                  <p>Remove</p>
+                  <h3>{item.product.name}</h3>
+                  <p><strong>£{item.product.price}</strong></p>
+                  <p>Quantity: <span className="box">{item.quantity} ⌵</span></p>
+                  <p onClick={handleRemoveFromBasket} name={item.product.id}>Remove</p>
                   <p>Add to your wish list</p>
                 </div>
               </div>
@@ -55,7 +71,7 @@ function Basket() {
             <p><strong>Subtotal Inc VAT</strong></p> 
             <p className="total">£{basketItems.reduce((acc, curr) => {
               return acc + curr.product.price
-            }, 0)}
+            }, 0).toFixed(2)}
             </p>
           </div>
           

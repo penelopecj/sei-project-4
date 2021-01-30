@@ -10,23 +10,31 @@ const baseUrl = '/api'
 
 
 export function getAllPies() {
-  return axios.get(`${baseUrl}/pies`)
+  return axios.get(`${baseUrl}/pies/`)
 }
 
 export function getSinglePie(id) {
-  return axios.get(`${baseUrl}/pies/${id}`)
+  return axios.get(`${baseUrl}/pies/${id}/`)
 }
 
 export function getAllUsers() {
-  return axios.get(`${baseUrl}/auth/users`, headers())
+  return axios.get(`${baseUrl}/auth/users/`, headers())
 }
 
 export function getSingleUser() {
-  return axios.get(`${baseUrl}/auth/profile`, headers())
+  return axios.get(`${baseUrl}/auth/profile/`, headers())
 }
 
-export function getBasket() {
-  return axios.get(`${baseUrl}/basket`, headers())
+export function getAllBasketItems() {
+  return axios.get(`${baseUrl}/basket/`, headers())
+}
+
+export function createBasketItem(pie) {
+  return axios.post(`${baseUrl}/basket/`, pie, headers())
+}
+
+export function deleteBasketItem(id) {
+  return axios.delete(`${baseUrl}/basket/${id}`, headers())
 }
 
 export function registerUser(formdata) {

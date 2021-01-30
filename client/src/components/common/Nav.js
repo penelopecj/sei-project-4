@@ -22,7 +22,7 @@ function Nav() {
         <p>Wish List</p>
       </Link>
       <Link to="/basket">
-        <p>Checkout</p>
+        <p>Basket</p>
       </Link>
       <Link to="/register">
         <p>Register</p>
