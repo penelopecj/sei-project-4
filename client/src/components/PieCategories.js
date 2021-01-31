@@ -7,7 +7,7 @@ import { CSSGrid, layout } from 'react-stonecutter'
 function PieCategoriesView() {
 
   const [pies, setPies] = React.useState([])
-  const [activeCategory, setActiveCategory] = React.useState('View All')
+  const [activeCategory] = React.useState('View All')
 
   useParams()
   //const { id } = useParams()
@@ -24,24 +24,57 @@ function PieCategoriesView() {
     getPies()
   }, [])
 
-  const filterPies = (selection) => {
+  const filterPies = async (e) => {
+    const filteredPies = pies.filter(pie => {
+      return pie.categories.filter(category => {
+        return category.name === e.target.innerHTML
+      })
+    })
+    setPies(filteredPies)
     if (activeCategory === 'View All') {
       return pies
-    } else {
-      const filteredPies = pies.filter(pie => {
-        return pie.categories.filter(category => {
-          return category.name === selection
-        })
-      })
-      return filteredPies
-    }
+    } 
+    // else {
+    //   const filteredPies = pies.filter(pie => {
+    //     return pie.categories.filter(category => {
+    //       return category.name === e.target.innerHTML
+    //     })
+    //   })
+    // }
   }
+    
 
-  const selectedCategory = async (e) => {
-    //const value = e.target.innerHTML
-    //.replace('&amp;', '&')
-    await setActiveCategory(e.target.innerHTML)
-  }
+  // const filterPies = (selection) => {
+  //   if (activeCategory === 'View All') {
+  //     return pies
+  //   } else {
+  //     const filteredPies = pies.filter(pie => {
+  //       return pie.categories.filter(category => {
+  //         return category.name === selection
+  //       })
+  //     })
+  //     return filteredPies
+  //   }
+  // }
+
+  // const filterPies = (selection) => {
+  //   if (selection === 'View All') {
+  //     return pies
+  //   } else {
+  //     const filteredPies = pies.filter(pie => {
+  //       return pie.categories.filter(category => {
+  //         return category.name === selection
+  //       })
+  //     })
+  //     return filteredPies
+  //   }
+  // }
+
+  // const selectedCategory = async (e) => {
+  //   //const value = e.target.innerHTML
+  //   //.replace('&amp;', '&')
+  //   await setActiveCategory(e.target.innerHTML)
+  // }
 
   const categoryList = [
     'View All',
@@ -82,16 +115,15 @@ function PieCategoriesView() {
       <section>
         <div
           className="category-page-tags"
-          onClick={(e) => selectedCategory(e)}>
+          onClick={filterPies}>
           {categoryList.map(categoryTag => (
             <Link
               key={categoryTag}
               to={`/pies/category/${categoryTag}`}
               className="category-tag">
               <div className="category-tag">
-                <div
-                  className={activeCategory === categoryTag
-                    ? 'ui olive label category-tag' : 'ui label category-tag'}>{categoryTag}</div>
+                <div className={activeCategory === categoryTag ? 'ui olive label category-tag' : 'ui label category-tag'} 
+                >{categoryTag}</div>
               </div>
             </Link>
           ))}
@@ -113,7 +145,7 @@ function PieCategoriesView() {
               columns={3}
               easing="ease-out"
             >
-              {filterPies(activeCategory).map((pie =>
+              {pies.map((pie =>
                 <div key={pie.name} itemHeight={270}>
                   <Link
                     to={`/pies/${pie.id}`}
