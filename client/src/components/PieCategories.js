@@ -24,15 +24,23 @@ function PieCategoriesView() {
     getPies()
   }, [])
 
-  const filterPies = (category) => {
-    if (category === 'View All') {
-      return pies
-    } else {
-      return pies.filter(pie => {
-        return pie.tags.includes(category)
-      })
-    }
+
+  const filteredPies = (pies) => {
+    pies.filter(pie => {
+      return pie.category === pies.category
+    })
+    return pies
   }
+  
+  // const filterPies = (category) => {
+  //   if (category === 'View All') {
+  //     return pies
+  //   } else {
+  //     return pies.filter(pie => {
+  //       return pie.tags.includes(category)
+  //     })
+  //   }
+  // }
 
   const selectedCategory = (e) => {
     const value = e.target.innerHTML.replace('&amp;', '&')
