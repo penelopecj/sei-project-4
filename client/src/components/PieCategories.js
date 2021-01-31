@@ -24,6 +24,7 @@ function PieCategoriesView() {
     getPies()
   }, [])
 
+<<<<<<< HEAD
   const filterPies = async (e) => {
     const filteredPies = pies.filter(pie => {
       return pie.categories.filter(category => {
@@ -41,6 +42,29 @@ function PieCategoriesView() {
     //     })
     //   })
     // }
+=======
+
+  const filteredPies = (pies) => {
+    pies.filter(pie => {
+      return pie.category === pies.category
+    })
+    return pies
+  }
+  
+  // const filterPies = (category) => {
+  //   if (category === 'View All') {
+  //     return pies
+  //   } else {
+  //     return pies.filter(pie => {
+  //       return pie.tags.includes(category)
+  //     })
+  //   }
+  // }
+
+  const selectedCategory = (e) => {
+    const value = e.target.innerHTML.replace('&amp;', '&')
+    setActiveCategory(value)
+>>>>>>> development
   }
     
 
