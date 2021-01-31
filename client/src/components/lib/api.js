@@ -44,3 +44,11 @@ export function registerUser(formdata) {
 export function loginUser(formdata) {
   return axios.post(`${baseUrl}/auth/login/`, formdata)
 }
+
+export function addReview(id, formdata) {
+  return axios.post(`${baseUrl}/pies/${id}/reviews`, formdata, headers())
+}
+
+export function deleteReview(id, reviewId) {
+  return axios.delete(`${baseUrl}/pies/${id}/reviews/${reviewId}`, headers())
+}

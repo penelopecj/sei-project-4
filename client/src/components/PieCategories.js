@@ -24,6 +24,14 @@ function PieCategoriesView() {
     getPies()
   }, [])
 
+
+  const filteredPies = (pies) => {
+    pies.filter(pie => {
+      return pie.category === pies.category
+    })
+    return pies
+  }
+  
   // const filterPies = (category) => {
   //   if (category === 'View All') {
   //     return pies
