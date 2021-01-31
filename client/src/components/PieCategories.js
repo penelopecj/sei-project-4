@@ -7,10 +7,10 @@ import { CSSGrid, layout } from 'react-stonecutter'
 function PieCategoriesView() {
 
   const [pies, setPies] = React.useState([])
-  const [activeCategory, setActiveCategory] = React.useState(useParams().category)
+  const [activeCategory, setActiveCategory] = React.useState('View All')
 
   useParams()
-  const { category } = useParams()
+  //const { id } = useParams()
 
   React.useEffect(() => {
     const getPies = async () => {
@@ -24,19 +24,23 @@ function PieCategoriesView() {
     getPies()
   }, [])
 
-  const filterPies = (category) => {
-    if (category === 'View All') {
+  const filterPies = (selection) => {
+    if (activeCategory === 'View All') {
       return pies
     } else {
-      return pies.filter(pie => {
-        return pie.tags.includes(category)
+      const filteredPies = pies.filter(pie => {
+        return pie.categories.filter(category => {
+          return category.name === selection
+        })
       })
+      return filteredPies
     }
   }
 
-  const selectedCategory = (e) => {
-    const value = e.target.innerHTML.replace('&amp;', '&')
-    setActiveCategory(value)
+  const selectedCategory = async (e) => {
+    //const value = e.target.innerHTML
+    //.replace('&amp;', '&')
+    await setActiveCategory(e.target.innerHTML)
   }
 
   const categoryList = [
@@ -60,7 +64,7 @@ function PieCategoriesView() {
     'Nuts'
   ]
 
-  filterPies(category)
+  //filterPies(category)
 
   const itemHeights = [
     300, 330, 270, 250
@@ -109,7 +113,7 @@ function PieCategoriesView() {
               columns={3}
               easing="ease-out"
             >
-              {filterPies(category).map((pie =>
+              {filterPies(activeCategory).map((pie =>
                 <div key={pie.name} itemHeight={270}>
                   <Link
                     to={`/pies/${pie.id}`}
