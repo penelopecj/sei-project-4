@@ -61,8 +61,8 @@ export function addReview(formdata) {
   return axios.post(`${baseUrl}/reviews/`, formdata, headers())
 }
 
-export function deleteReview(id, reviewId) {
-  return axios.delete(`${baseUrl}/pies/${id}/reviews/${reviewId}`, headers())
+export function deleteReview(reviewId) {
+  return axios.delete(`${baseUrl}/reviews/${reviewId}`, headers())
 }
 
 // * Category functions
