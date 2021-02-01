@@ -1,5 +1,5 @@
 import React from 'react'
-import { getSinglePie, createBasketItem, addReview, deleteReview, getSingleUser } from './lib/api'
+import { getSinglePie, createBasketItem, addReview, deleteReview, getSingleUser, editUser } from './lib/api'
 
 import useForm from '../utils/useForm'
 import { isAuthenticated, getPayload } from './lib/auth'
@@ -64,8 +64,8 @@ function Show() {
   }, [id])
 
   const handleAddToWishlist = async () => {
-    user.favourites.push(pie)
-    // await editSingleUser(...user, favourites: [...favourites, pie])
+    //user.favourites.push(pie)
+    await editUser([...user.favourites, pie])
   }
 
   const handleAddToBasket = async () => {
@@ -118,7 +118,7 @@ function Show() {
   //   }
   // }
 
-  console.log(pie)
+  // console.log(pie)
   return (
     <main className="show-page">
       {pie ?

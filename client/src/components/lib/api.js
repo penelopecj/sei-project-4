@@ -33,6 +33,10 @@ export function getSingleUser() {
   return axios.get(`${baseUrl}/auth/profile/`, headers())
 }
 
+export function editUser(id, formdata) {
+  return axios.put(`${baseUrl}/auth/users/${id}`, formdata, headers())
+}
+
 export function registerUser(formdata) {
   return axios.post(`${baseUrl}/auth/register/`, formdata)
 }
