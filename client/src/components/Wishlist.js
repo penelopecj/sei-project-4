@@ -39,7 +39,7 @@ function Wishlist() {
                     </figure>
                     <div>
                       <h3>{fav.name}</h3>
-                      <h4>£{fav.price}</h4>
+                      <h4>£{fav.price.toFixed(2)}</h4>
                       <p>{fav.description}</p>
                     </div>
                   </Link>
