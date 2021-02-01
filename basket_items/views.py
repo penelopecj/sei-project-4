@@ -45,3 +45,13 @@ class BasketDetailView(APIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Basket_Item.DoesNotExist:
             raise NotFound()
+
+    def put(self, request, pk):
+        basket_to_update = Basket_Item.objects.get(pk=pk)
+        if basket_to_update.owner.id != request.user.id:
+            raise PermissionDenied()
+        updated_basket = BasketSerializer(basket_to_update, data=request.data)
+        if updated_basket.is_valid():
+            updated_basket.save()
+            return Response(updated_basket.data, status=status.HTTP_202_ACCEPTED)
+        return Response(updated_basket.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
