@@ -57,8 +57,8 @@ export function deleteBasketItem(id) {
 
 // * Review functions
 
-export function addReview(id, formdata) {
-  return axios.post(`${baseUrl}/pies/${id}/reviews`, formdata, headers())
+export function addReview(formdata) {
+  return axios.post(`${baseUrl}/reviews/`, formdata, headers())
 }
 
 export function deleteReview(id, reviewId) {

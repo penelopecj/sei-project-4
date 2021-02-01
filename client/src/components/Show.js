@@ -1,20 +1,20 @@
 import React from 'react'
 import { getSinglePie, createBasketItem, addReview, deleteReview, getSingleUser } from './lib/api'
+
 import useForm from '../utils/useForm'
-import { isOwner, isAuthenticated } from './lib/auth'
+import { isOwner, isAuthenticated, getPayload } from './lib/auth'
 import { useParams, Link, useHistory } from 'react-router-dom'
 
 import {
-  Button,
-  Comment,
-  Form,
-  Header
+  //Button,
+  Comment
+  //Form
 } from 'semantic-ui-react'
 
 function Show() {
   const [pie, setPie] = React.useState(null) 
-  const [reviews, setReviews] = React.useState(null)
-  const [newReview, setNewReview] = React.useState() 
+  //const [reviews, setReviews] = React.useState(null)
+  //const [newReview, setNewReview] = React.useState() 
   //const [user, setUser] = React.useState(null)
   //const [hasError, setHasError] = React.useState(false)
   const [user, setUser] = React.useState(null)
@@ -33,11 +33,15 @@ function Show() {
     getData()
   }, [])
 
-  const { formdata, setFormdata, handleChange } = useForm({
-    text: ''
+  const { id } = useParams()
+  const payload = getPayload()
+  const { formdata, handleChange } = useForm({
+    text: '',
+    rating: '',
+    pie: id,
+    owner: payload.sub
   })
 
-  const { id } = useParams()
   const history = useHistory()
 
   const isLoggedIn = isAuthenticated()
@@ -48,16 +52,16 @@ function Show() {
       try {
         const { data } = await getSinglePie(id)
         setPie(data)
-        if (data.comments) {
-          setReviews(data.reviews)
-        }
+        //if (data.reviews) {
+        //setReviews(data.reviews)
+        //}
       } catch (err) {
         console.log(err)
         //setHasError(true)
       }
     }
     getData()
-  }, [id, newReview])
+  }, [id])
 
   const handleAddToWishlist = async () => {
     user.favourites.push(pie)
@@ -79,21 +83,25 @@ function Show() {
   const handleAddReview = async event => {
     event.preventDefault()
     try {
-      await addReview(id, formdata)
-      setNewReview({ id, formdata })
-      setFormdata({ text: '' })
-      console.log('Add Review')
+      await addReview(formdata)
+      const { data } = await getSinglePie(id)
+      setPie(data)
     } catch (err) {
       console.log(err)
     }
   }
 
+  //formdata.text = ''
+  //event.target[5].value = ''
+  //console.log(event.value)
+  //setNewReview({ id, formdata })
+  //setFormdata({ text: '' })
   const handleDeleteReview = async event => {
     event.preventDefault()
     try {
       const reviewId = event.target.name
       await deleteReview(id, reviewId)
-      setNewReview({ id, formdata })
+      //setNewReview({ id, formdata })
       // setRefreshData(true)
     } catch (err) {
       console.log(err)
@@ -152,20 +160,18 @@ function Show() {
           <div className="showpage-reviews-wrapper">
             <>
               <Comment.Group>
-                <Header as='h3' dividing>
-            Reviews
-                </Header>
-                {reviews ? reviews.map(review => (
-                  <>
+                {pie.reviews && pie.reviews.length > 0 ? 
+                  pie.reviews.map(review => (
                     <Comment key={review.id} value={review.id}>
                       <Comment.Avatar
                         src={review.owner.profileImage} />
                       <Comment.Content>
-                        <Comment.Author as='a'>{review.owner.name}</Comment.Author>
+                        <Comment.Author as='a'>{review.owner.username}</Comment.Author>
                         <Comment.Metadata>
-                          <div>Today at 5:42PM</div>
+                          <div>{review.createdAt.slice(0, 10)}</div>
                         </Comment.Metadata>
                         <Comment.Text>{review.text}</Comment.Text>
+                        <Comment.Text>{review.rating} ★</Comment.Text>
                         {isOwner(review.owner ? review.owner.id : '') &&
                     <Comment.Actions>
                       <Comment.Action onClick={handleDeleteReview} name={review.id}>Delete</Comment.Action>
@@ -173,48 +179,44 @@ function Show() {
                         }
                       </Comment.Content>
                     </Comment>
-                  </>
-                ))
+                  ))
                   :
-                  <Comment>
-                    <Comment.Avatar image="" />
-                    <Comment.Content>
-                      <Comment.Author as='a'>Caroline</Comment.Author>
-                      <Comment.Metadata>
-                        <div>Today at 2:30PM</div>
-                      </Comment.Metadata>
-                      <Comment.Text>So delicious!</Comment.Text>
-                      <Comment.Actions>
-                        <Comment.Action>Reply</Comment.Action>
-                      </Comment.Actions>
-                    </Comment.Content>
-                  </Comment>
+                  <div>
+                    Be the first to review this delicious pie!
+                  </div>
                 }
-                {isLoggedIn && <Form reply>
-                  <Form.TextArea
-                    onChange={handleChange}
-                    name="text"
-                    value={formdata.text}
-                    placeholder="Leave a review..." />
-                  <Button
-                    content='Add Reply'
+                {isLoggedIn && 
+                <form onClick={handleAddReview}>
+                  <div>
+                    <textarea
+                      onChange={handleChange}
+                      name="text"
+                      value={formdata.text}
+                      placeholder="Leave a review..." /> 
+                  </div>
+                  <div>
+                    <input 
+                      type="number" 
+                      onChange={handleChange}
+                      name="rating"
+                      value={formdata.rating} />
+                  </div>
+                  
+                  <button>submit</button>
+                  {/* <Button content='Add Reply'
                     position='right'
-                    onClick={handleAddReview}
-                    labelPosition='left' icon='edit' primary />
-                </Form>
+                    labelPosition='left' icon='edit' primary /> */}
+                </form>
                 }
               </Comment.Group>
             </>
           </div>
-            :
-          <section>
-            <div>Be the first to review this delicious pie!</div>
-          </section>
+            
           
         </section>
         :
         <section>
-          Loading...
+          <div>Loading...</div>
         </section>
       } 
     </main>
