@@ -58,7 +58,7 @@
       "model": "reviews.review",
       "pk": 6,
       "fields": {
-          "text": "There's nothing more American than applie pie.",
+          "text": "There's nothing more American than apple pie.",
           "rating": 5,
           "created_at": "2021-01-27T22:32:10.157Z",
           "pie": 2,

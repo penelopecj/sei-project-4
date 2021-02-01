@@ -64,10 +64,20 @@ class ProfileView(APIView):
 #         serialized_users = UserSerializer(users, many=True)
 #         return Response(serialized_users.data, status=status.HTTP_200_OK)
 
-# # class UserDetailView(APIView):
-# #     """ View for GET requests to 'api/auth/users/pk/' """
+class UserDetailView(APIView):
+    """ View for GET and POST requests to 'api/auth/users/pk/' """
 
-# #     def get(self, _request, pk):
-# #         user = User.objects.get(pk=pk)
-# #         serialized_user = UserSerializer(user)
-# #         return Response(serialized_user.data, status=status.HTTP_200_OK)
+    permission_classes = (IsAuthenticated, )
+
+    def get(self, _request, pk):
+        user = User.objects.get(pk=pk)
+        serialized_user = UserSerializer(user)
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
+        
+    def put(self, request, pk):
+        user_to_update = User.objects.get(pk=pk)
+        updated_user = UserSerializer(user_to_update, data=request.data)
+        if updated_user.is_valid():
+            updated_user.save()
+            return Response(updated_user.data, status=status.HTTP_202_ACCEPTED)
+        return Response(updated_user.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
