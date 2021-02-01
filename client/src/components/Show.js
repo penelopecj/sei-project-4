@@ -1,8 +1,8 @@
 import React from 'react'
-import { getSinglePie, createBasketItem, addReview, deleteReview, getSingleUser } from './lib/api'
+import { getSinglePie, createBasketItem, addReview, deleteReview, getSingleUser, editUser } from './lib/api'
 
 import useForm from '../utils/useForm'
-import { isOwner, isAuthenticated, getPayload } from './lib/auth'
+import { isAuthenticated, getPayload } from './lib/auth'
 import { useParams, Link, useHistory } from 'react-router-dom'
 
 import {
@@ -64,8 +64,8 @@ function Show() {
   }, [id])
 
   const handleAddToWishlist = async () => {
-    user.favourites.push(pie)
-    // await editSingleUser(...user, favourites: [...favourites, pie])
+    //user.favourites.push(pie)
+    await editUser([...user.favourites, pie])
   }
 
   const handleAddToBasket = async () => {
@@ -91,24 +91,34 @@ function Show() {
     }
   }
 
-  //formdata.text = ''
-  //event.target[5].value = ''
-  //console.log(event.value)
-  //setNewReview({ id, formdata })
-  //setFormdata({ text: '' })
-  const handleDeleteReview = async event => {
-    event.preventDefault()
+  const handleDeleteReview = async (reviewId) => {
     try {
-      const reviewId = event.target.name
-      await deleteReview(id, reviewId)
-      //setNewReview({ id, formdata })
-      // setRefreshData(true)
+      await deleteReview(reviewId)
+      const { data } = await getSinglePie(id)
+      setPie(data)
     } catch (err) {
       console.log(err)
     }
   }
 
-  console.log(pie)
+  //formdata.text = ''
+  //event.target[5].value = ''
+  //console.log(event.value)
+  //setNewReview({ id, formdata })
+  //setFormdata({ text: '' })
+  // const handleDeleteReview = async event => {
+  //   event.preventDefault()
+  //   try {
+  //     const reviewId = event.target.name
+  //     await deleteReview(id, reviewId)
+  //     //setNewReview({ id, formdata })
+  //     // setRefreshData(true)
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
+
+  // console.log(pie)
   return (
     <main className="show-page">
       {pie ?
@@ -172,11 +182,9 @@ function Show() {
                         </Comment.Metadata>
                         <Comment.Text>{review.text}</Comment.Text>
                         <Comment.Text>{review.rating} ★</Comment.Text>
-                        {isOwner(review.owner ? review.owner.id : '') &&
-                    <Comment.Actions>
-                      <Comment.Action onClick={handleDeleteReview} name={review.id}>Delete</Comment.Action>
-                    </Comment.Actions>
-                        }
+                        {/* {isOwner(review.owner ? review.owner.id : '') && */}
+                        <button onClick={() => handleDeleteReview(review.id)}>Delete</button>
+                        {/* } */}
                       </Comment.Content>
                     </Comment>
                   ))

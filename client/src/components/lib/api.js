@@ -33,6 +33,10 @@ export function getSingleUser() {
   return axios.get(`${baseUrl}/auth/profile/`, headers())
 }
 
+export function editUser(id, formdata) {
+  return axios.put(`${baseUrl}/auth/users/${id}`, formdata, headers())
+}
+
 export function registerUser(formdata) {
   return axios.post(`${baseUrl}/auth/register/`, formdata)
 }
@@ -61,8 +65,8 @@ export function addReview(formdata) {
   return axios.post(`${baseUrl}/reviews/`, formdata, headers())
 }
 
-export function deleteReview(id, reviewId) {
-  return axios.delete(`${baseUrl}/pies/${id}/reviews/${reviewId}`, headers())
+export function deleteReview(reviewId) {
+  return axios.delete(`${baseUrl}/reviews/${reviewId}`, headers())
 }
 
 // * Category functions
