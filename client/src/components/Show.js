@@ -65,10 +65,11 @@ function Show() {
   }, [id])
 
   const handleAddToWishlist = async () => {
-    //user.favourites.push(pie)
-    console.log(payload.sub, { ...user, favourites: [ ...user.favourites, pie ] })
-    await editUser(payload.sub, { ...user, favourites: [ ...user.favourites, pie ] })
-    
+    // ! This works, but it overwrites the old list of favourites each time!
+    await editUser(payload.sub, { favourites: [ pie.id ] })
+    console.log(user)
+    // console.log(payload.sub, { ...user, favourites: [ ...user.favourites, pie ] })
+    // await editUser(payload.sub, { ...user, favourites: [ ...user.favourites, pie ] })
   }
 
   const handleAddToBasket = async () => {
