@@ -104,8 +104,6 @@ function Show() {
     }
   }
 
-
-
   //formdata.text = ''
   //event.target[5].value = ''
   //console.log(event.value)
@@ -142,7 +140,7 @@ function Show() {
                   <ul>
                     {pie.categories.map(category => {
                       return <li key={category.id}><Link 
-                        to={`/pies/${category.name}`}>{category.name}
+                        to={'/pies/'}>{category.name}
                       </Link></li>
                     })}
                   </ul>
@@ -159,7 +157,7 @@ function Show() {
             <button className="yellow-background checkout-btn">Customise this pie</button>
           </Link>
           <button onClick={handleAddToBasket} className="blue-background checkout-btn">Add to shopping bag</button>
-          <h2>What customers are saying about {pie.name}</h2>
+          <h2>What customers are saying about {pie.name}:</h2>
           {/* {pie.reviews && pie.reviews.length > 0 ?
             <section>
               {pie.reviews.map(review => {
@@ -177,9 +175,9 @@ function Show() {
               <Comment.Group>
                 {pie.reviews && pie.reviews.length > 0 ? 
                   pie.reviews.map(review => (
-                    <Comment key={review.id} value={review.id}>
+                    <Comment key={review.id} value={review.id} className="box review">
                       <Comment.Avatar
-                        src={review.owner.profileImage} />
+                        src={review.owner.profileImage} className="avatar" />
                       <Comment.Content>
                         {/* <Comment.Author as='a'>{review.owner.username}</Comment.Author> */}
                         <Comment.Metadata>
@@ -187,7 +185,7 @@ function Show() {
                           <div>{review.createdAt.slice(0, 10)}</div>
                         </Comment.Metadata>
                         <Comment.Text>{review.text}</Comment.Text>
-                        <Comment.Text>{review.rating} ★</Comment.Text>
+                        <Comment.Text>{'★'.repeat(review.rating)} </Comment.Text>
                         {/* {isOwner(review.owner ? review.owner.id : '') && */}
                         <button onClick={() => handleDeleteReview(review.id)}>Delete</button>
                         {/* } */}
@@ -200,8 +198,11 @@ function Show() {
                   </div>
                 }
                 {isLoggedIn && 
-                <form onClick={handleAddReview}>
+                <form onClick={handleAddReview} className="review-form">
                   <div>
+                    <label>Review our {pie.name}</label>
+                  </div>
+                  <div>  
                     <textarea
                       onChange={handleChange}
                       name="text"
@@ -209,14 +210,20 @@ function Show() {
                       placeholder="Leave a review..." /> 
                   </div>
                   <div>
+                    <label>Rate from 1 to 5</label>
+                  </div>
+                  <div>
                     <input 
                       type="number" 
                       onChange={handleChange}
                       name="rating"
+                      min="1"
+                      max="5"
+                      placeholder="★"
                       value={formdata.rating} />
                   </div>
                   
-                  <button>submit</button>
+                  <button className="yellow-background">Submit Review</button>
                   {/* <Button content='Add Reply'
                     position='right'
                     labelPosition='left' icon='edit' primary /> */}

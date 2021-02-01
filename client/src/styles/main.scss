@@ -201,6 +201,10 @@ main {
   cursor: pointer;
 }
 
+.remove-btn:hover {
+  font-weight: bold;
+}
+
 .show-page {
 
   h1, h3 {
@@ -209,6 +213,10 @@ main {
 
   h3 {
     color: rgb(71, 176, 41);
+  }
+
+  p {
+    line-height: 1.5;
   }
 
   figure {
@@ -298,5 +306,57 @@ main {
 
   .clear-btn:hover {
     background-color: rgb(230, 230, 230);
+  }
+}
+
+.review {
+
+  button {
+    margin: 5px 0 10px 0;
+    border-radius: 10px;
+    border: 1px solid $light-grey;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: rgb(222, 222, 222);
+  }
+}
+
+.review-form {
+  margin-top: 2rem;
+
+  label {
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  textarea {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    width: 400px;
+    height: 100px;
+    padding: 7px;
+    font-size: 1rem;
+  }
+
+  input {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 7px;
+  }
+
+  button {
+    margin: 10px;
+    //font-size: 1.1rem;
+    font-weight: bold;
+    border: 1px solid rgb(249, 199, 0);
+    padding: 7px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: rgb(249, 199, 0);
   }
 }
