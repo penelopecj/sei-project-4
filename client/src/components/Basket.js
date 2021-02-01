@@ -1,12 +1,18 @@
 import React from 'react'
-import { getAllBasketItems, deleteBasketItem } from './lib/api'
+// import useForm from '../utils/useForm'
+import { getAllBasketItems, deleteBasketItem, updateBasketItem } from './lib/api'
 //import { Button } from 'semantic-ui-react'
 
 
 function Basket() {
 
   const [basketItems, setBasketItems] = React.useState(null)
+  // const [itemQuantity, setItemQuantity] = React.useState(null)
   //const [hasError, setHasError] = React.useState(false)
+
+  // const { formdata, handleChange } = useForm({
+  //   quantity: ''
+  // })
 
   React.useEffect(() => {
     const getData = async () => {
@@ -31,6 +37,22 @@ function Basket() {
     }
   }
 
+  const handleEditFromBasket = async (event) => {
+    try {
+      // await updateBasketItem(event.target.id)
+      // const { data } = await getAllBasketItems()
+      // setBasketItems(data) 
+
+      console.log(updateBasketItem)
+      console.log('basket item number', event.target.id)
+      console.log(event.target.value)
+      event.target.value = ''
+      event.target.value = event.nativeEvent.data
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <main className="narrow-page">
       <h1>Shopping Bag</h1>
@@ -47,7 +69,9 @@ function Basket() {
                 <div>
                   <h3>{item.product.name}</h3>
                   <p><strong>£{item.product.price.toFixed(2)}</strong></p>
-                  <p>Quantity: <span className="box">{item.quantity} ⌵</span></p>
+                  <p>Quantity: </p>
+                  {/* <span id={item.id} className="box">{item.quantity} ⌵</span></p> */}
+                  <input onChange={handleEditFromBasket} id={item.id} name="quantity" type="number" value={item.quantity} /><button onClick={handleEditFromBasket}>Update item</button>
                   <p onClick={handleRemoveFromBasket} id={item.id} className="remove-btn">Remove</p>
                   <p>Add to your wish list</p>
                 </div>

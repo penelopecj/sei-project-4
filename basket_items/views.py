@@ -7,6 +7,7 @@ from rest_framework import status
 from django.contrib.auth import get_user_model
 # from django.http import JsonResponse
 
+from .serializers.quantity import BasketQuantitySerializer
 from .serializers.common import BasketSerializer
 from .serializers.populated import PopulatedBasketSerializer
 from .models import Basket_Item
@@ -54,7 +55,7 @@ class BasketDetailView(APIView):
             print(basket_to_update.owner.id)
             print(request.user.id)
             raise PermissionDenied()
-        updated_basket = BasketSerializer(basket_to_update, data=request.data)
+        updated_basket = BasketQuantitySerializer(basket_to_update, data=request.data)
         if updated_basket.is_valid():
             updated_basket.save()
             return Response(updated_basket.data, status=status.HTTP_202_ACCEPTED)

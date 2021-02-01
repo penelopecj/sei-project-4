@@ -59,6 +59,10 @@ export function deleteBasketItem(id) {
   return axios.delete(`${baseUrl}/basket/${id}`, headers())
 }
 
+export function updateBasketItem(id, formdata) {
+  return axios.put(`${baseUrl}/basket/${id}`, formdata, headers())
+}
+
 // * Review functions
 
 export function addReview(formdata) {
