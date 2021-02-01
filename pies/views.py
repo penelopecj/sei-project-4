@@ -18,7 +18,7 @@ class PieListView(APIView):
         # GET all the pies
         pies = Pie.objects.all()
         # Serialize all the pies
-        serialized_pies = PopulatedPieSerializer(pies, many=True)
+        serialized_pies = PieSerializer(pies, many=True)
         return Response(serialized_pies.data, status=status.HTTP_200_OK)
 
 class PieDetailView(APIView):

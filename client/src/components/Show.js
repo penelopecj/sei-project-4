@@ -104,6 +104,8 @@ function Show() {
     }
   }
 
+
+
   //formdata.text = ''
   //event.target[5].value = ''
   //console.log(event.value)
@@ -179,8 +181,9 @@ function Show() {
                       <Comment.Avatar
                         src={review.owner.profileImage} />
                       <Comment.Content>
-                        <Comment.Author as='a'>{review.owner.username}</Comment.Author>
+                        {/* <Comment.Author as='a'>{review.owner.username}</Comment.Author> */}
                         <Comment.Metadata>
+                          <h4>{review.owner.username}</h4>
                           <div>{review.createdAt.slice(0, 10)}</div>
                         </Comment.Metadata>
                         <Comment.Text>{review.text}</Comment.Text>

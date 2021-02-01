@@ -4,10 +4,16 @@ from rest_framework.exceptions import NotFound
 from rest_framework import status
 
 from .serializers.common import ReviewSerializer
+from .serializers.populated import PopulatedReviewSerializer
 from .models import Review
 
 class ReviewListView(APIView):
     """ View for post request to '/reviews/' """
+
+    def get(self, _request):
+        reviews = Review.objects.all()
+        serialized_reviews = PopulatedReviewSerializer(reviews, many=True)
+        return Response(serialized_reviews.data, status=status.HTTP_200_OK)
 
     def post(self, request):
         review_to_create = ReviewSerializer(data=request.data)

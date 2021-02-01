@@ -44,6 +44,10 @@ main {
   color: white;
 }
 
+.blue-background:hover {
+  background-color: #145396;
+}
+
 .yellow-background {
   background-color: $ikea-yellow;
   color: black;
@@ -268,5 +272,31 @@ main {
 
   p:hover {
     border: 1px solid grey;
+  }
+}
+
+.categories-wrapper {
+  button {
+    border: none;
+    border-radius: 7px;
+    padding: 4px 8px;
+    margin: 1px;
+    background-color: $light-grey;
+    color: $lightest-grey;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: rgb(185, 185, 185);
+  }
+
+  .clear-btn {
+    background-color: $lightest-grey;
+    color: grey;
+    //border: 1px solid $light-grey;
+  }
+
+  .clear-btn:hover {
+    background-color: rgb(230, 230, 230);
   }
 }
