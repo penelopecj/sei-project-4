@@ -10,6 +10,7 @@ import jwt
 
 from .serializers.common import UserSerializer
 from .serializers.populated import PopulatedUserSerializer
+from .serializers.favourites import FavouritesUserSerializer
 User = get_user_model()
 
 class RegisterView(APIView):
@@ -76,7 +77,7 @@ class UserDetailView(APIView):
         
     def put(self, request, pk):
         user_to_update = User.objects.get(pk=pk)
-        updated_user = UserSerializer(user_to_update, data=request.data)
+        updated_user = FavouritesUserSerializer(user_to_update, data=request.data)
         if updated_user.is_valid():
             updated_user.save()
             return Response(updated_user.data, status=status.HTTP_202_ACCEPTED)

@@ -65,10 +65,10 @@ function Show() {
   }, [id])
 
   const handleAddToWishlist = async () => {
-    //user.favourites.push(pie)
-    console.log(payload.sub, { ...user, favourites: [ ...user.favourites, pie ] })
-    await editUser(payload.sub, { ...user, favourites: [ ...user.favourites, pie ] })
-    
+    const favIds = user.favourites.map(fav => {
+      return fav.id
+    })
+    await editUser(payload.sub, { favourites: [ ...favIds, pie.id ] })
   }
 
   const handleAddToBasket = async () => {
