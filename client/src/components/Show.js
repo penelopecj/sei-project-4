@@ -6,6 +6,7 @@ import { isAuthenticated, getPayload } from './lib/auth'
 import { useParams, Link, useHistory } from 'react-router-dom'
 
 import {
+  //Checkbox,
   //Button,
   Comment
   //Form
@@ -65,7 +66,9 @@ function Show() {
 
   const handleAddToWishlist = async () => {
     //user.favourites.push(pie)
-    await editUser([...user.favourites, pie])
+    console.log(payload.sub, { ...user, favourites: [ ...user.favourites, pie ] })
+    await editUser(payload.sub, { ...user, favourites: [ ...user.favourites, pie ] })
+    
   }
 
   const handleAddToBasket = async () => {

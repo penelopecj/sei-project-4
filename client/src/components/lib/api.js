@@ -34,7 +34,7 @@ export function getSingleUser() {
 }
 
 export function editUser(id, formdata) {
-  return axios.put(`${baseUrl}/auth/users/${id}`, formdata, headers())
+  return axios.put(`${baseUrl}/auth/users/${id}/`, formdata, headers())
 }
 
 export function registerUser(formdata) {
