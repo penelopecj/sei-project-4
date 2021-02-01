@@ -1,5 +1,5 @@
 import React from 'react'
-import { getSinglePie, createBasketItem, addReview, deleteReview } from './lib/api'
+import { getSinglePie, createBasketItem, addReview, deleteReview, getSingleUser } from './lib/api'
 import useForm from '../utils/useForm'
 import { isOwner, isAuthenticated } from './lib/auth'
 import { useParams, Link, useHistory } from 'react-router-dom'
@@ -17,6 +17,21 @@ function Show() {
   const [newReview, setNewReview] = React.useState() 
   //const [user, setUser] = React.useState(null)
   //const [hasError, setHasError] = React.useState(false)
+  const [user, setUser] = React.useState(null)
+
+  React.useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data } = await getSingleUser()
+        setUser(data)
+
+      } catch (err) {
+        console.log(err)
+        //setHasError(true)
+      }
+    }
+    getData()
+  }, [])
 
   const { formdata, setFormdata, handleChange } = useForm({
     text: ''
@@ -44,6 +59,10 @@ function Show() {
     getData()
   }, [id, newReview])
 
+  const handleAddToWishlist = async () => {
+    user.favourites.push(pie)
+    // await editSingleUser(...user, favourites: [...favourites, pie])
+  }
 
   const handleAddToBasket = async () => {
     try {
@@ -87,23 +106,35 @@ function Show() {
       {pie ?
         
         <section className="box">
-          <h1>{pie.name}</h1>
-          <h3>Now only £{pie.price}!</h3>
-          <figure>
-            <img src={pie.image} alt={pie.name} />
-          </figure>
-          <p>{pie.description}</p>
-          {pie.categories && pie.categories.length > 0 ?
-            <ul>
-              {pie.categories.map(category => {
-                return <li key={category.id}><Link 
-                  to={`/pies/${category.name}`}>{category.name}
-                </Link></li>
-              })}
-            </ul>
-            :
-            <ul></ul>
-          }
+          <div className="flex-box">
+            <figure>
+              <img src={pie.image} alt={pie.name} />
+            </figure>
+            <div>    
+              <h1>{pie.name}</h1>
+              <h3>Now only £{pie.price.toFixed(2)}!</h3>
+              <p>{pie.description}</p>
+              <section className="flex-box align-center space-between">
+                {pie.categories && pie.categories.length > 0 ?
+                  <ul>
+                    {pie.categories.map(category => {
+                      return <li key={category.id}><Link 
+                        to={`/pies/${category.name}`}>{category.name}
+                      </Link></li>
+                    })}
+                  </ul>
+                  :
+                  <ul></ul>
+                }
+                <div className="flex-box justify-center fav-btn">
+                  <p onClick={handleAddToWishlist}>♡</p>
+                </div>
+              </section>
+            </div>
+          </div>
+          <Link to={`/pies/${id}/customise/`}>
+            <button className="yellow-background checkout-btn">Customise this pie</button>
+          </Link>
           <button onClick={handleAddToBasket} className="blue-background checkout-btn">Add to shopping bag</button>
           <h2>What customers are saying about {pie.name}</h2>
           {/* {pie.reviews && pie.reviews.length > 0 ?

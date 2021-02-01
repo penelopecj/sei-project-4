@@ -27,12 +27,18 @@ function Profile() {
   }, [])
 
   return (
-    <main>
+    <main className="profile-page">
       <h1>My Account</h1>
       {user ?
         <section className="box">
           <h2>Hello, {user.firstName} {user.lastName}!</h2>
-          <p>Profile Image: {user.profileImage}</p>
+          <figure>
+            {user.profileImage ?
+              <img src={user.profileImage} alt="profile image" />
+              :
+              <img src="../images/defaultImage.jpg" alt="profile image" />
+            }
+          </figure>
           <h3>Your details are shown below:</h3>
           <h4>Username: {user.username}</h4>
           <h4>Email address: {user.email}</h4>

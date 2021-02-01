@@ -10,6 +10,7 @@ import Register from './components/auth/Register'
 import Basket from './components/Basket'
 import Index from './components/Index'
 import Show from './components/Show'
+import PieCreate from './components/PieCreate'
 import PieCategoriesView from './components/PieCategories'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/pies/category/:id" component={PieCategoriesView} />
+        <Route path="/pies/:id/customise" component={PieCreate} />
         <Route path="/pies/:id" component={Show} />
         <Route path="/profile" component={Profile} />
         <Route path="/wishlist" component={Wishlist} />

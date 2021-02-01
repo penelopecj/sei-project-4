@@ -9,13 +9,21 @@ function headers() {
 const baseUrl = '/api'
 
 
+// * Pie functions
+
 export function getAllPies() {
   return axios.get(`${baseUrl}/pies/`)
+}
+
+export function createPie() {
+  return axios.post(`${baseUrl}/pies/`)
 }
 
 export function getSinglePie(id) {
   return axios.get(`${baseUrl}/pies/${id}/`)
 }
+
+// * User functions
 
 export function getAllUsers() {
   return axios.get(`${baseUrl}/auth/users/`, headers())
@@ -24,6 +32,16 @@ export function getAllUsers() {
 export function getSingleUser() {
   return axios.get(`${baseUrl}/auth/profile/`, headers())
 }
+
+export function registerUser(formdata) {
+  return axios.post(`${baseUrl}/auth/register/`, formdata)
+}
+
+export function loginUser(formdata) {
+  return axios.post(`${baseUrl}/auth/login/`, formdata)
+}
+
+// * Basket functions
 
 export function getAllBasketItems() {
   return axios.get(`${baseUrl}/basket/`, headers())
@@ -37,13 +55,7 @@ export function deleteBasketItem(id) {
   return axios.delete(`${baseUrl}/basket/${id}`, headers())
 }
 
-export function registerUser(formdata) {
-  return axios.post(`${baseUrl}/auth/register/`, formdata)
-}
-
-export function loginUser(formdata) {
-  return axios.post(`${baseUrl}/auth/login/`, formdata)
-}
+// * Review functions
 
 export function addReview(id, formdata) {
   return axios.post(`${baseUrl}/pies/${id}/reviews`, formdata, headers())
@@ -51,4 +63,10 @@ export function addReview(id, formdata) {
 
 export function deleteReview(id, reviewId) {
   return axios.delete(`${baseUrl}/pies/${id}/reviews/${reviewId}`, headers())
+}
+
+// * Category functions
+
+export function getAllCategories() {
+  return axios.get(`${baseUrl}/categories/`)
 }

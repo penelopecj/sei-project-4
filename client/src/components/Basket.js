@@ -46,7 +46,7 @@ function Basket() {
                 </figure>
                 <div>
                   <h3>{item.product.name}</h3>
-                  <p><strong>£{item.product.price}</strong></p>
+                  <p><strong>£{item.product.price.toFixed(2)}</strong></p>
                   <p>Quantity: <span className="box">{item.quantity} ⌵</span></p>
                   <p onClick={handleRemoveFromBasket} id={item.id} className="remove-btn">Remove</p>
                   <p>Add to your wish list</p>

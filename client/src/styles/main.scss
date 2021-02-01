@@ -44,6 +44,11 @@ main {
   color: white;
 }
 
+.yellow-background {
+  background-color: $ikea-yellow;
+  color: black;
+}
+
 .box {
   border: 1px solid $light-grey;
   padding: 15px;
@@ -58,6 +63,10 @@ main {
 .space-between {
   display: flex;
   justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .align-center {
@@ -181,6 +190,7 @@ main {
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
+  margin: 5px;
 }
 
 .remove-btn {
@@ -198,8 +208,8 @@ main {
   }
 
   figure {
-    width: 50%;
-    margin: 1rem auto;
+    width: 100%;
+    // margin: 1rem auto;
 
     img {
       border-radius: 15px;
@@ -211,4 +221,52 @@ main {
 
 .category-page-tags {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-page {
+
+  figure {
+    width: 50%;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.order-online {
+  padding: 4rem;
+
+  h3 {
+    font-size: 1.7rem;
+  }
+
+  button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+
+  }
+}
+
+.fav-btn {
+  width: 200px;
+  font-size: 1.6rem;
+  
+  p {
+    border: 1px solid $light-grey;
+    padding: 15px 20px;
+    border-radius: 32px;
+    cursor: pointer;
+  }
+
+  p:hover {
+    border: 1px solid grey;
+  }
 }

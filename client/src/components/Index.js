@@ -32,7 +32,7 @@ function Index() {
                 <Link to={`pies/${pie.id}`}>
                   <div className="space-between">
                     <h3>{pie.name}</h3>
-                    <p>£{pie.price}</p>
+                    <p>£{pie.price.toFixed(2)}</p>
                   </div>
                   <figure>
                     <img src={pie.image} alt={pie.name} />

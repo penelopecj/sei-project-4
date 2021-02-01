@@ -24,7 +24,6 @@ function PieCategoriesView() {
     getPies()
   }, [])
 
-<<<<<<< HEAD
   const filterPies = async (e) => {
     const filteredPies = pies.filter(pie => {
       return pie.categories.filter(category => {
@@ -35,21 +34,21 @@ function PieCategoriesView() {
     if (activeCategory === 'View All') {
       return pies
     } 
-    // else {
-    //   const filteredPies = pies.filter(pie => {
-    //     return pie.categories.filter(category => {
-    //       return category.name === e.target.innerHTML
-    //     })
-    //   })
-    // }
-=======
-
-  const filteredPies = (pies) => {
-    pies.filter(pie => {
-      return pie.category === pies.category
-    })
-    return pies
   }
+  // else {
+  //   const filteredPies = pies.filter(pie => {
+  //     return pie.categories.filter(category => {
+  //       return category.name === e.target.innerHTML
+  //     })
+  //   })
+  // }
+
+  // const filteredPies = (pies) => {
+  //   pies.filter(pie => {
+  //     return pie.category === pies.category
+  //   })
+  //   return pies
+  // }
   
   // const filterPies = (category) => {
   //   if (category === 'View All') {
@@ -61,11 +60,10 @@ function PieCategoriesView() {
   //   }
   // }
 
-  const selectedCategory = (e) => {
-    const value = e.target.innerHTML.replace('&amp;', '&')
-    setActiveCategory(value)
->>>>>>> development
-  }
+  // const selectedCategory = (e) => {
+  //   const value = e.target.innerHTML.replace('&amp;', '&')
+  //   setActiveCategory(value)
+  // }
     
 
   // const filterPies = (selection) => {
