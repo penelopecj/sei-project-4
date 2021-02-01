@@ -31,6 +31,8 @@ class BasketListView(APIView):
         return Response(basket.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 
+
+
 class BasketDetailView(APIView):
     """ Controller for delete requests to /basket_item/id(pk) endpoint """
 
@@ -49,6 +51,8 @@ class BasketDetailView(APIView):
     def put(self, request, pk):
         basket_to_update = Basket_Item.objects.get(pk=pk)
         if basket_to_update.owner.id != request.user.id:
+            print(basket_to_update.owner.id)
+            print(request.user.id)
             raise PermissionDenied()
         updated_basket = BasketSerializer(basket_to_update, data=request.data)
         if updated_basket.is_valid():
