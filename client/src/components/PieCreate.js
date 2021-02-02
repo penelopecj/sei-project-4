@@ -4,13 +4,13 @@ import { useParams, useHistory } from 'react-router-dom'
 
 
 import PieForm from './PieForm'
-import useForm from '../utils/useForm'
+import useCheckboxForm from '../utils/useCheckboxForm'
 
 function PieCreate() {
   const { id } = useParams()
   const history = useHistory()
 
-  const { formdata, setFormdata, handleChange, setErrors } = useForm({
+  const { formdata, setFormdata, handleChange, setErrors } = useCheckboxForm({
     categories: []
   })
   // ({
