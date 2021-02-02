@@ -76,7 +76,7 @@ function Show() {
         quantity: 1,
         product: id
       })
-      history.push('/basket/')
+      history.push('/basket')
     } catch (err) {
       console.log(err)
     }
@@ -139,7 +139,7 @@ function Show() {
                   <ul>
                     {pie.categories.map(category => {
                       return <li key={category.id}><Link 
-                        to={'/pies/'}>{category.name}
+                        to={'/pies'}>{category.name}
                       </Link></li>
                     })}
                   </ul>
