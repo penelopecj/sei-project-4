@@ -25,7 +25,7 @@ function PieForm({ handleChange, handleSubmit, formdataCategories }) {
   }, [])
 
   //console.log('Errors: ', errors)
-  console.log('This is formdataCategories:', formdataCategories)
+  //console.log('This is formdataCategories:', formdataCategories)
 
   return (
     <form onSubmit={handleSubmit} className="box">
@@ -51,7 +51,7 @@ function PieForm({ handleChange, handleSubmit, formdataCategories }) {
         }
       </div>
       {/* ON SUBMIT: write a function that overwrites the existing list of categories in the pie object with the formdataCategories STATE from this form :D */}
-      <button type="submit" className="checkout-btn blue-background">Add to basket</button>
+      <button type="submit" className="checkout-btn blue-background" onClick={handleSubmit}>Add to basket</button>
     </form>
   )
 }

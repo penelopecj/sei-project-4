@@ -27,10 +27,18 @@ function PieCreate() {
   
   const handleSubmit = async (event) => {
     event.preventDefault()
+    const unPopulatedCategories = formdata.categories.map(object => {
+      return object.id
+    })
+    //console.log('Unpopulated array', unPopulatedCategories)
+    //console.log({ ...formdata, name: `Custom ${formdata.name}`, price: `${formdata.price + 10}`, reviews: [], categories: unPopulatedCategories, image: 'https://farm9.staticflickr.com/8333/8391597635_2af90bd702.jpg' })
+
 
     try {
-      await createPie(formdata)
-      history.push('/basket/')
+      await createPie({ ...formdata, name: `Custom ${formdata.name}`, price: `${formdata.price + 10}`, reviews: [], categories: unPopulatedCategories, image: 'https://farm9.staticflickr.com/8333/8391597635_2af90bd702.jpg' })
+      // console.log(createPie)
+      // console.log(history)
+      history.push('/pies')
     } catch (err) {
       setErrors(err.response.data.errors)
     }

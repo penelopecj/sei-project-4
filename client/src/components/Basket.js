@@ -60,7 +60,6 @@ function Basket() {
   const handleEditFromBasket = async (event) => {
     try {
       await updateBasketItem(event.target.id, formdata[parseInt(event.target.className)]) 
-     
       const { data } = await getAllBasketItems()
       setBasketItems(data)
       console.log(event.target.className)

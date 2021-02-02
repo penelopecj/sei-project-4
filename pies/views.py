@@ -6,7 +6,7 @@ from rest_framework.exceptions import NotFound
 # Un-comment the below when user authentication is ready:
 # from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-from .models import Pie 
+from .models import Pie
 from .serializers.common import PieSerializer
 from .serializers.populated import PopulatedPieSerializer
 
@@ -20,6 +20,13 @@ class PieListView(APIView):
         # Serialize all the pies
         serialized_pies = PieSerializer(pies, many=True)
         return Response(serialized_pies.data, status=status.HTTP_200_OK)
+
+    def post(self, request):
+        pie_to_create = PieSerializer(data=request.data)
+        if pie_to_create.is_valid():
+            pie_to_create.save()
+            return Response(pie_to_create.data, status=status.HTTP_201_CREATED)
+        return Response(pie_to_create.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 class PieDetailView(APIView):
     """ View for GET and PUT and DELETE requests to 'api/pies/pk/' """

@@ -15,8 +15,8 @@ export function getAllPies() {
   return axios.get(`${baseUrl}/pies/`)
 }
 
-export function createPie() {
-  return axios.post(`${baseUrl}/pies/`)
+export function createPie(formdata) {
+  return axios.post(`${baseUrl}/pies/`, formdata, headers())
 }
 
 export function getSinglePie(id) {
