@@ -1,12 +1,13 @@
 import React from 'react'
 // import useForm from '../utils/useForm'
-import { getAllBasketItems, deleteBasketItem, updateBasketItem } from './lib/api'
+import { getAllBasketItems, deleteBasketItem, updateBasketItem, getSingleUser, editUser } from './lib/api'
+import { getPayload } from './lib/auth'
 //import { Button } from 'semantic-ui-react'
 
 
 function Basket() {
-
   const [basketItems, setBasketItems] = React.useState(null)
+  const [user, setUser] = React.useState(null)
   // const [itemQuantity, setItemQuantity] = React.useState(null)
   //const [hasError, setHasError] = React.useState(false)
 
@@ -26,6 +27,23 @@ function Basket() {
     }
     getData()
   }, [])
+
+  React.useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data } = await getSingleUser()
+        setUser(data)
+
+      } catch (err) {
+        console.log(err)
+        //setHasError(true)
+      }
+    }
+    getData()
+  }, [])
+
+  const payload = getPayload()
+
 
   const handleRemoveFromBasket = async (event) => {
     try {
@@ -53,6 +71,13 @@ function Basket() {
     }
   }
 
+  const handleAddToWishlist = async (event) => {
+    const favIds = user.favourites.map(fav => {
+      return fav.id
+    })
+    await editUser(payload.sub, { favourites: [ ...favIds, event.target.id ] })
+  }
+
   return (
     <main className="narrow-page">
       <h1>Shopping Bag</h1>
@@ -72,8 +97,8 @@ function Basket() {
                   <p>Quantity: </p>
                   {/* <span id={item.id} className="box">{item.quantity} ⌵</span></p> */}
                   <input onChange={handleEditFromBasket} id={item.id} name="quantity" type="number" value={item.quantity} /><button onClick={handleEditFromBasket}>Update item</button>
-                  <p onClick={handleRemoveFromBasket} id={item.id} className="remove-btn">Remove</p>
-                  <p>Add to your wish list</p>
+                  <p onClick={handleRemoveFromBasket} id={item.id} className="remove-add-btn">Remove</p>
+                  <p onClick={handleAddToWishlist} id={item.product.id}className="remove-add-btn">Add to your wish list</p>
                 </div>
               </div>
             )

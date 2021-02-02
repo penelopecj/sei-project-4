@@ -170,6 +170,7 @@ main {
 
 .basket-item {
   margin-bottom: 15px;
+  padding-bottom: 15px;
   border-bottom: 1px solid $light-grey;
   
   figure {
@@ -197,12 +198,12 @@ main {
   margin: 5px;
 }
 
-.remove-btn {
+.remove-add-btn {
   cursor: pointer;
 }
 
-.remove-btn:hover {
-  font-weight: bold;
+.remove-add-btn:hover {
+  color: grey;
 }
 
 .show-page {

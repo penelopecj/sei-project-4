@@ -16,7 +16,6 @@ function Show() {
   const [pie, setPie] = React.useState(null) 
   //const [reviews, setReviews] = React.useState(null)
   //const [newReview, setNewReview] = React.useState() 
-  //const [user, setUser] = React.useState(null)
   //const [hasError, setHasError] = React.useState(false)
   const [user, setUser] = React.useState(null)
 
