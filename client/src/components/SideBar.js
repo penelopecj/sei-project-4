@@ -10,7 +10,7 @@ import {
   Sidebar
 } from 'semantic-ui-react'
 
-function SidebarExampleDimmed() {
+function SideBar() {
   const [visible, setVisible] = React.useState(false)
 
   return (
@@ -61,4 +61,4 @@ function SidebarExampleDimmed() {
   )
 }
 
-export default SidebarExampleDimmed
+export default SideBar

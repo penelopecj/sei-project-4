@@ -18,7 +18,9 @@
     "react-slick": "^0.28.0",
     "react-stonecutter": "^0.3.10",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.3"
+    "semantic-ui-react": "^2.0.3",
+    "simple-react-lightbox": "^3.6.1",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

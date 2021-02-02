@@ -1,4 +1,5 @@
 import React from 'react'
+import PieSlider from '../PieSlider'
 
 function Home() {
  
@@ -11,8 +12,12 @@ function Home() {
         <p>Whilst our stores are temporarily closed you can still browse for baking inspiration, book an online planning appointment, and place orders for contact-free delivery or click and collect.</p>
         <button>Read more</button>
       </section>
-     
+      <div className="homepage-slider-section">
+        <h2>Pie Taster Selection</h2>
+        <PieSlider />
+      </div>
     </main>
+    
   )
 }
 
