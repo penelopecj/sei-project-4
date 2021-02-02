@@ -4,15 +4,18 @@ import { useParams, useHistory } from 'react-router-dom'
 
 
 import PieForm from './PieForm'
-import useForm from '../utils/useForm'
+import useCheckboxForm from '../utils/useCheckboxForm'
 
 function PieCreate() {
   const { id } = useParams()
   const history = useHistory()
 
-  const { formdata, setFormdata, handleChange, setErrors } = useForm({
-    categories: [] 
+  const { formdata, setFormdata, handleChange, setErrors } = useCheckboxForm({
+    categories: []
   })
+  // ({
+  //   categories: []
+  // })
 
   React.useEffect(() => {
     const getData = async () => {
@@ -38,7 +41,7 @@ function PieCreate() {
       <h1 className="form-heading">Build Your Own {formdata.name}*</h1>
       <p>*Some assembly required.</p>
       <PieForm 
-        formdata={formdata}
+        formdataCategories={formdata.categories}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
