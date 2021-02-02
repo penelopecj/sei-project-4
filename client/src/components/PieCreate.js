@@ -11,8 +11,11 @@ function PieCreate() {
   const history = useHistory()
 
   const { formdata, setFormdata, handleChange, setErrors } = useForm({
-    categories: [] 
+    categories: []
   })
+  // ({
+  //   categories: []
+  // })
 
   React.useEffect(() => {
     const getData = async () => {
@@ -38,7 +41,7 @@ function PieCreate() {
       <h1 className="form-heading">Build Your Own {formdata.name}*</h1>
       <p>*Some assembly required.</p>
       <PieForm 
-        formdata={formdata}
+        formdataCategories={formdata.categories}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />

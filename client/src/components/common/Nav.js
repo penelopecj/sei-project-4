@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 // import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar'
 // import 'react-pro-sidebar/dist/css/styles.css'
-import { slide as Menu } from 'react-burger-menu'
+// import { slide as Menu } from 'react-burger-menu'
 
 
 
@@ -21,11 +21,11 @@ function Nav() {
           </SubMenu>
         </Menu>
       </ProSidebar> */}
-      <Menu>
+      {/* <Menu>
         <a id="home" className="menu-item" href="/">Home</a>
         <a id="about" className="menu-item" href="/category1">Category 1</a>
         <a id="contact" className="menu-item" href="/category2">Category 2</a>
-      </Menu>
+      </Menu> */}
       <nav>
         <Link to="/">
           <div className="logo">
