@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Home() {
+ 
   return (
     <main>
       <h1>Welcome to PIE-KEA!</h1>
@@ -10,6 +11,7 @@ function Home() {
         <p>Whilst our stores are temporarily closed you can still browse for baking inspiration, book an online planning appointment, and place orders for contact-free delivery or click and collect.</p>
         <button>Read more</button>
       </section>
+     
     </main>
   )
 }

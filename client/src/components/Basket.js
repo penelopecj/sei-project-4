@@ -1,5 +1,5 @@
 import React from 'react'
-// import useForm from '../utils/useForm'
+import useEditQuantityForm from '../utils/useEditQuantityForm'
 import { getAllBasketItems, deleteBasketItem, updateBasketItem, getSingleUser, editUser } from './lib/api'
 import { getPayload } from './lib/auth'
 //import { Button } from 'semantic-ui-react'
@@ -10,16 +10,17 @@ function Basket() {
   const [user, setUser] = React.useState(null)
   // const [itemQuantity, setItemQuantity] = React.useState(null)
   //const [hasError, setHasError] = React.useState(false)
-
-  // const { formdata, handleChange } = useForm({
-  //   quantity: ''
-  // })
+  
+  const { formdata, setFormdata, handleChange } = useEditQuantityForm({
+    quantity: ''
+  })
 
   React.useEffect(() => {
     const getData = async () => {
       try {
         const { data } = await getAllBasketItems()
         setBasketItems(data) 
+        setFormdata(data)
       } catch (err) {
         console.log(err)
         //setHasError(true)
@@ -55,22 +56,31 @@ function Basket() {
     }
   }
 
+  console.log('basket items', basketItems)
   const handleEditFromBasket = async (event) => {
     try {
+      await updateBasketItem(event.target.id, formdata[parseInt(event.target.className)]) 
+     
+      const { data } = await getAllBasketItems()
+      setBasketItems(data)
+      console.log(event.target.className)
+      console.log(typeof(parseInt(event.target.className)))
+      // basketItems[position].quantity = event.target.value
       // await updateBasketItem(event.target.id)
       // const { data } = await getAllBasketItems()
       // setBasketItems(data) 
-
       console.log(updateBasketItem)
-      console.log('basket item number', event.target.id)
-      console.log(event.target.value)
-      event.target.value = ''
-      event.target.value = event.nativeEvent.data
+      // console.log(updateBasketItem)
+      //console.log('basket item number', event.target.id)
+      // console.log(event.target.value)
+      // event.target.value = ''
+      // event.target.value = event.nativeEvent.data
     } catch (err) {
       console.log(err)
     }
   }
-
+  console.log('From basket js', formdata)
+  
   const handleAddToWishlist = async (event) => {
     const favIds = user.favourites.map(fav => {
       return fav.id
@@ -85,7 +95,7 @@ function Basket() {
       
       {basketItems && basketItems.length > 0 ?
         <div className="checkout-basket">
-          {basketItems.map(item => {
+          {basketItems.map((item, index) => {
             return (
               <div className="flex-box basket-item" key={item.id}>
                 <figure>
@@ -96,7 +106,17 @@ function Basket() {
                   <p><strong>£{item.product.price.toFixed(2)}</strong></p>
                   <p>Quantity: </p>
                   {/* <span id={item.id} className="box">{item.quantity} ⌵</span></p> */}
-                  <input onChange={handleEditFromBasket} id={item.id} name="quantity" type="number" value={item.quantity} /><button onClick={handleEditFromBasket}>Update item</button>
+                  <input 
+                    placeholder={item.quantity}
+                    // formdata={formdata} 
+                    onChange={handleChange} 
+                    id={index} 
+                    name="quantity" 
+                    type="number" 
+                    value={formdata.quantity} 
+                  />
+                  <button onClick={handleEditFromBasket} id={item.id} className={index} >Update item</button>
+
                   <p onClick={handleRemoveFromBasket} id={item.id} className="remove-add-btn">Remove</p>
                   <p onClick={handleAddToWishlist} id={item.product.id}className="remove-add-btn">Add to your wish list</p>
                 </div>

@@ -56,11 +56,15 @@ export function createBasketItem(pie) {
 }
 
 export function deleteBasketItem(id) {
-  return axios.delete(`${baseUrl}/basket/${id}`, headers())
+  return axios.delete(`${baseUrl}/basket/${id}/`, headers())
 }
 
 export function updateBasketItem(id, formdata) {
-  return axios.put(`${baseUrl}/basket/${id}`, formdata, headers())
+  return axios.put(`${baseUrl}/basket/${id}/`, formdata, headers())
+}
+
+export function updateBasket(formdata) {
+  return axios.put(`${baseUrl}/basket/`, formdata, headers())
 }
 
 // * Review functions
@@ -70,7 +74,7 @@ export function addReview(formdata) {
 }
 
 export function deleteReview(reviewId) {
-  return axios.delete(`${baseUrl}/reviews/${reviewId}`, headers())
+  return axios.delete(`${baseUrl}/reviews/${reviewId}/`, headers())
 }
 
 // * Category functions
