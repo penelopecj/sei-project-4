@@ -1,5 +1,5 @@
 import React from 'react'
-import { getSinglePie, createPie } from './lib/api'
+import { getSinglePie, createPie, createBasketItem } from './lib/api'
 import { useParams, useHistory } from 'react-router-dom'
 
 
@@ -25,14 +25,29 @@ function PieCreate() {
     getData()
   }, [id, setFormdata])
   
+
   const handleSubmit = async (event) => {
     event.preventDefault()
-
+    const unPopulatedCategories = formdata.categories.map(object => {
+      return object.id
+    })
     try {
-      await createPie(formdata)
-      history.push('/basket/')
+      const { data } = await createPie({ ...formdata, name: `Custom ${formdata.name}`, price: `${formdata.price + 10}`, reviews: [], categories: unPopulatedCategories, image: 'https://farm9.staticflickr.com/8333/8391597635_2af90bd702.jpg' })
+      handleAddToBasket(data)
     } catch (err) {
       setErrors(err.response.data.errors)
+    }
+  }
+
+  const handleAddToBasket = async (data) => {
+    try {
+      await createBasketItem({
+        quantity: 1,
+        product: data.id
+      })
+      history.push('/basket')
+    } catch (err) {
+      console.log(err)
     }
   }
     

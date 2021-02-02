@@ -2,6 +2,7 @@ import React from 'react'
 import useEditQuantityForm from '../utils/useEditQuantityForm'
 import { getAllBasketItems, deleteBasketItem, updateBasketItem, getSingleUser, editUser } from './lib/api'
 import { getPayload } from './lib/auth'
+//import { Link } from 'react-router-dom'
 //import { Button } from 'semantic-ui-react'
 
 
@@ -60,7 +61,6 @@ function Basket() {
   const handleEditFromBasket = async (event) => {
     try {
       await updateBasketItem(event.target.id, formdata[parseInt(event.target.className)]) 
-     
       const { data } = await getAllBasketItems()
       setBasketItems(data)
       console.log(event.target.className)
@@ -104,6 +104,17 @@ function Basket() {
                 <div>
                   <h3>{item.product.name}</h3>
                   <p><strong>£{item.product.price.toFixed(2)}</strong></p>
+                  {item.product.categories.length > 0 ?
+                    <ul>
+                      {item.product.categories.map(category => {
+                        return (
+                          <li key={category.id}>{category.name}</li>
+                        )
+                      })}
+                    </ul>
+                    :
+                    <ul></ul>
+                  }
                   <p>Quantity: </p>
                   {/* <span id={item.id} className="box">{item.quantity} ⌵</span></p> */}
                   <input 
