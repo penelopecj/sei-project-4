@@ -153,7 +153,7 @@ function Show() {
             </div>
           </div>
           <Link to={`/pies/${id}/customise/`}>
-            <button className="yellow-background checkout-btn">Customise this pie</button>
+            <button className="yellow-background checkout-btn customise-btn">Customise this pie</button>
           </Link>
           <button onClick={handleAddToBasket} className="blue-background checkout-btn">Add to shopping bag</button>
           <h2>What customers are saying about {pie.name}:</h2>

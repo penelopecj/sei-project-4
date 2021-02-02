@@ -52,6 +52,10 @@ main {
   color: black;
 }
 
+.customise-btn:hover {
+  background-color: rgb(249, 199, 0);
+}
+
 .box {
   border: 1px solid $light-grey;
   padding: 15px;
@@ -279,7 +283,8 @@ main {
   }
 
   p:hover {
-    border: 1px solid grey;
+    border: 1px solid rgb(94, 94, 94);
+    box-shadow: 0 0 3px 1px rgba(128, 128, 128, 0.3);
   }
 }
 

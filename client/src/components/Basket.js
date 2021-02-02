@@ -143,7 +143,7 @@ function Basket() {
           <div className="space-between align-center">
             <p><strong>Subtotal Inc VAT</strong></p> 
             <p className="total">£{basketItems.reduce((acc, curr) => {
-              return acc + curr.product.price
+              return acc + (curr.product.price * curr.quantity)
             }, 0).toFixed(2)}
             </p>
           </div>
