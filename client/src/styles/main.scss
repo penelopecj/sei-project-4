@@ -490,3 +490,26 @@ main {
     background-color: rgb(249, 199, 0);
   }
 }
+
+.change-quantity {
+  input {
+    padding: 10px 0 10px 20px;
+    border: 1px solid $light-grey;
+    border-radius: 20px 0 0 20px;
+  }
+
+  button {
+    padding: 10px 20px 10px 10px;
+    border-top: 1px solid $light-grey;
+    border-right: 1px solid $light-grey;
+    border-bottom: 1px solid $light-grey;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+    color: rgb(91, 91, 91);
+  }
+
+  button:hover {
+    background-color: rgb(228, 228, 228);
+  }
+}
