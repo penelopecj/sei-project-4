@@ -66,7 +66,13 @@ function Index() {
 
   return (
     <main>
-      <p className="bread-crumbs">Bakery &gt; Pies</p>
+      <div className="bread-crumbs">
+        <p>Bakery </p>
+        <p>
+          <span className="material-icons">keyboard_arrow_right</span>
+        </p>
+        <p>Pies</p>
+      </div>
       <h1>All pies</h1>
       {categories ?
         <div className="categories-wrapper">

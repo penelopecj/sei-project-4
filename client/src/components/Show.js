@@ -147,7 +147,11 @@ function Show() {
                   <ul></ul>
                 }
                 <div className="flex-box justify-center fav-btn">
-                  <p onClick={handleAddToWishlist}>♡</p>
+                  <p onClick={handleAddToWishlist}>
+                    <span className="material-icons">
+                      favorite_border
+                    </span>
+                  </p>
                 </div>
               </section>
             </div>
@@ -157,18 +161,6 @@ function Show() {
           </Link>
           <button onClick={handleAddToBasket} className="blue-background checkout-btn">Add to shopping bag</button>
           <h2>What customers are saying about {pie.name}:</h2>
-          {/* {pie.reviews && pie.reviews.length > 0 ?
-            <section>
-              {pie.reviews.map(review => {
-                return (
-                  <div key={review.id} className="box">
-                    <h5>{review.rating} ⭐️</h5>
-                    <p>{review.text}</p>
-                    <p>{review.createdAt.slice(0, 10)}</p>
-                  </div>
-                )
-              })}
-            </section> */}
           <div className="showpage-reviews-wrapper">
             <>
               <Comment.Group>

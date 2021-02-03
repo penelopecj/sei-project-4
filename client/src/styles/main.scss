@@ -11,14 +11,22 @@ $lightest-grey: rgb(248, 248, 248);
   box-sizing: border-box;
 } 
 
-
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; 
+  width: 100vw; 
+  margin: 0 auto;
   padding: 20px;
   font-size: 1.3rem;
+
+  section {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    //margin: auto 6rem auto auto;
+  }
+
 
   a {
     color: black;
@@ -72,9 +80,20 @@ main {
   border-bottom: 2px solid black;
 }
 
+.black-outline {
+  // border: 2px solid black;
+  // border-radius: 20px;
+  // padding: 0 10px;
+  font-weight: bold;
+}
+
 .bread-crumbs {
   border-bottom: 1px solid $light-grey;
-  padding-bottom: 1rem;
+  display: flex;
+
+  p {
+    font-size: 1.1rem;
+  }
 }
 
 .space-between {
@@ -318,7 +337,7 @@ main {
   
   p {
     border: 1px solid $light-grey;
-    padding: 15px 20px;
+    padding: 16px 18px 9px 18px;
     border-radius: 32px;
     cursor: pointer;
   }

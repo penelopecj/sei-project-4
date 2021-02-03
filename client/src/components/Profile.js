@@ -1,5 +1,5 @@
 import React from 'react'
-// import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import { isAuthenticated } from './lib/auth'
 import { getSingleUser } from './lib/api'
 // import { getPayload, getToken } from './lib/auth'
@@ -46,7 +46,11 @@ function Profile() {
           <h4>Phone number: {user.phoneNumber}</h4>
         </section>
         :
-        <p>Loading...</p>
+        <div>
+          <Link to="/register">Register </Link>
+          or
+          <Link to="/login"> Login </Link> to view your account details.
+        </div>
       }
     </main>
   )
