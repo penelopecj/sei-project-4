@@ -3,7 +3,7 @@
   "model": "jwt_auth.user",
   "pk": 1,
   "fields": {
-    "password": "admin",
+    "password": "pbkdf2_sha256$216000$RVlWaEcAABtL$UGP+lwcmVDE27T/XVnPCDFRG75CYIYGladDEvIvZxG0=",
     "last_login": "2021-01-28T14:28:23.721Z",
     "is_superuser": true,
     "username": "admin",
@@ -27,7 +27,7 @@
   "model": "jwt_auth.user",
   "pk": 2,
   "fields": {
-    "password": "pass",
+    "password": "pbkdf2_sha256$216000$RVlWaEcAABtL$UGP+lwcmVDE27T/XVnPCDFRG75CYIYGladDEvIvZxG0=",
     "last_login": "2021-01-28T14:28:50Z",
     "is_superuser": false,
     "username": "jack",
@@ -53,7 +53,7 @@
   "model": "jwt_auth.user",
   "pk": 3,
   "fields": {
-    "password": "pass",
+    "password": "pbkdf2_sha256$216000$RVlWaEcAABtL$UGP+lwcmVDE27T/XVnPCDFRG75CYIYGladDEvIvZxG0=",
     "last_login": null,
     "is_superuser": false,
     "username": "penny",
@@ -78,7 +78,7 @@
   "model": "jwt_auth.user",
   "pk": 4,
   "fields": {
-    "password": "pass",
+    "password": "pbkdf2_sha256$216000$RVlWaEcAABtL$UGP+lwcmVDE27T/XVnPCDFRG75CYIYGladDEvIvZxG0=",
     "last_login": null,
     "is_superuser": false,
     "username": "edwyn",
@@ -104,7 +104,7 @@
   "model": "jwt_auth.user",
   "pk": 5,
   "fields": {
-    "password": "pass",
+    "password": "pbkdf2_sha256$216000$RVlWaEcAABtL$UGP+lwcmVDE27T/XVnPCDFRG75CYIYGladDEvIvZxG0=",
     "last_login": null,
     "is_superuser": false,
     "username": "noa",
@@ -130,7 +130,7 @@
   "model": "jwt_auth.user",
   "pk": 6,
   "fields": {
-    "password": "pass",
+    "password": "pbkdf2_sha256$216000$RVlWaEcAABtL$UGP+lwcmVDE27T/XVnPCDFRG75CYIYGladDEvIvZxG0=",
     "last_login": null,
     "is_superuser": false,
     "username": "charlotte",
@@ -155,7 +155,7 @@
   "model": "jwt_auth.user",
   "pk": 7,
   "fields": {
-    "password": "pass",
+    "password": "pbkdf2_sha256$216000$RVlWaEcAABtL$UGP+lwcmVDE27T/XVnPCDFRG75CYIYGladDEvIvZxG0=",
     "last_login": null,
     "is_superuser": false,
     "username": "lee",
