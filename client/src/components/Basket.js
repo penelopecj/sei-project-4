@@ -115,19 +115,24 @@ function Basket() {
                     :
                     <ul></ul>
                   }
-                  <p>Quantity: </p>
-                  {/* <span id={item.id} className="box">{item.quantity} ⌵</span></p> */}
-                  <input 
-                    placeholder={item.quantity}
-                    // formdata={formdata} 
-                    onChange={handleChange} 
-                    id={index} 
-                    name="quantity" 
-                    type="number" 
-                    value={formdata.quantity} 
-                  />
-                  <button onClick={handleEditFromBasket} id={item.id} className={index} >Update item</button>
-
+                  <div className="change-quantity">
+                    <p>Quantity: </p>
+                    <input 
+                      placeholder={item.quantity}
+                      onChange={handleChange} 
+                      id={index} 
+                      name="quantity" 
+                      type="number" 
+                      max="15"
+                      min="1"
+                      value={formdata.quantity} 
+                    />
+                    <button 
+                      onClick={handleEditFromBasket} 
+                      id={item.id} 
+                      className={index} 
+                    >Update item</button>
+                  </div>
                   <p onClick={handleRemoveFromBasket} id={item.id} className="remove-add-btn">Remove</p>
                   <p onClick={handleAddToWishlist} id={item.product.id}className="remove-add-btn">Add to your wish list</p>
                 </div>
