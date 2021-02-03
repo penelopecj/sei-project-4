@@ -28,14 +28,14 @@ function PieForm({ handleChange, handleSubmit, formdataCategories }) {
   //console.log('This is formdataCategories:', formdataCategories)
 
   return (
-    <form onSubmit={handleSubmit} className="box">
-      <h3>Categories</h3>
-      <div>
+    <form onSubmit={handleSubmit} className="customise-form">
+      <h3 className="light-blue-background">Categories</h3>
+      <section>
         {categories && formdataCategories ?
           categories.map(category => {
             return (
               <div key={category.id}>
-                <label>{category.name}</label>
+                <label>{category.name} </label>
                 <input 
                   type="checkbox" 
                   onChange={handleChange} 
@@ -49,9 +49,8 @@ function PieForm({ handleChange, handleSubmit, formdataCategories }) {
           :
           <label>No options available</label>
         }
-      </div>
-      {/* ON SUBMIT: write a function that overwrites the existing list of categories in the pie object with the formdataCategories STATE from this form :D */}
-      <button type="submit" className="checkout-btn blue-background" onClick={handleSubmit}>Add to basket</button>
+        <button type="submit" className="checkout-btn blue-background" onClick={handleSubmit}>Add to basket</button>
+      </section>
     </form>
   )
 }

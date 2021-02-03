@@ -53,8 +53,8 @@ function PieCreate() {
     
   return (
     <main>
-      <h1 className="form-heading">Build Your Own {formdata.name}*</h1>
-      <p>*Some assembly required.</p>
+      <h1 className="form-heading blue-font">Build Your Own {formdata.name}*</h1>
+      <p className="grey-font">*Some assembly required.</p>
       <PieForm 
         formdataCategories={formdata.categories}
         handleChange={handleChange}

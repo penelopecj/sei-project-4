@@ -51,6 +51,14 @@ main {
   width: 60%;
 }
 
+.grey-font {
+  color: grey;
+}
+
+.blue-font {
+  color: $ikea-blue;
+}
+
 .blue-background {
   background-color: $ikea-blue;
   color: white;
@@ -60,6 +68,49 @@ main {
   background-color: #145396;
 }
 
+.light-blue-background {
+  background-color: #e8f3ff;
+  color: $ikea-blue;
+  padding: 13px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  margin: 0;
+  border-radius: 7px 7px 0 0;
+}
+
+.customise-form {
+  border: 1px solid $light-grey;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.2);
+  
+  section {
+    padding: 20px;
+  }
+  
+  div {
+    margin: 10px auto;
+    border-top: 1px solid $light-grey; 
+    border-right: 1px solid $light-grey; 
+    border-bottom: 1px solid $light-grey; 
+    border-left: 10px solid rgba(50, 197, 255, 0.6); 
+    padding: 10px 5px;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+
+  label {
+    font-size: 1.1rem;
+  }
+
+  input {
+    cursor: pointer;
+  }
+
+}
+
 .yellow-background {
   background-color: $ikea-yellow;
   color: black;
@@ -67,6 +118,20 @@ main {
 
 .customise-btn:hover {
   background-color: rgb(249, 199, 0);
+}
+
+.green-background {
+  background-color: rgb(52, 162, 52);
+  color: white;
+}
+
+.green-background:hover {
+  background-color: green;
+  color: white;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .box {
