@@ -72,9 +72,19 @@ main {
   border-bottom: 2px solid black;
 }
 
+.black-outline {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 0 10px;
+}
+
 .bread-crumbs {
   border-bottom: 1px solid $light-grey;
-  padding-bottom: 1rem;
+  display: flex;
+
+  p {
+    font-size: 1.1rem;
+  }
 }
 
 .space-between {

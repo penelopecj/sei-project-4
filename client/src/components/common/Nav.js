@@ -36,23 +36,37 @@ function Nav() {
           </div>
         </Link>
         <Link to="/pies">
-          <p>All Pies</p>
+          {/* <p>All Pies</p> */}
+          <span className="material-icons">
+            home_mini
+          </span>
         </Link>
         <Link to="/profile">
-          <p>My Account</p>
+          {/* <p>My Account</p> */}
+          <span className="material-icons">
+            person_outline
+          </span>
         </Link>
         <Link to="/wishlist">
-          <p>Wish List</p>
+          {/* <p>Wish List</p> */}
+          <span className="material-icons">
+            favorite_border
+          </span>
         </Link>
         <Link to="/basket">
-          <p>Basket</p>
+          {/* <p>Basket</p> */}
+          <span className="material-icons">
+            work_outline
+          </span>
         </Link>
-        <Link to="/register">
-          <p>Register</p>
-        </Link>
-        <Link to="/login">
-          <p>Login</p>
-        </Link>
+        <div className="flex-box">
+          <Link to="/register">
+            <p className="black-outline">Register</p>
+          </Link>
+          <Link to="/login">
+            <p className="black-outline">Login</p>
+          </Link>
+        </div>
       </nav>
     </nav>
   )
