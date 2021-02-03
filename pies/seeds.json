@@ -3,7 +3,7 @@
   "model": "pies.pie",
   "pk": 1,
   "fields": {
-    "name": "Pecan Pie",
+    "name": "Pecån Pie",
     "description": "Pecans, corn syrup (or brown sugar, or both); considered a southern dish, but you’ll find it anywhere you find pies; especially popular as a dessert during Thanksgiving or Christmas; the pumpkin pie is its heated rival.",
     "image": "https://img.grouponcdn.com/seocms/wTfQHKzEZLUy5KECEoSvRugcxqx/671x671_Pecan_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 12.0,
@@ -18,7 +18,7 @@
   "model": "pies.pie",
   "pk": 2,
   "fields": {
-    "name": "Apple Pie",
+    "name": "Åpple Pie",
     "description": "Apples, sugar, and cinnamon, often served with vanilla ice cream on the side; as the Great American Pie, it’s sometimes grouped with baseball and hot dogs as a purely American symbol (though the English and the Dutch have been making pies with apples for centuries).",
     "image": "https://img.grouponcdn.com/seocms/2i7116adj14eoCiYBx8SQLUzXZrq/671x671_Apple_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 6.5,
@@ -33,7 +33,7 @@
   "model": "pies.pie",
   "pk": 3,
   "fields": {
-    "name": "Thanksgiving Pumpkin Pie",
+    "name": "Thånksgiving Pumpkin Pie",
     "description": "Pumpkin-flavored custard, ginger, nutmeg; it’s a Thanksgiving classic, in part because you can use your leftover Halloween jack-o-lantern for its stuffing; the pecan pie is its heated rival.",
     "image": "https://img.grouponcdn.com/seocms/3FNe2BxwrZMZrxP2GujcD6yjP69f/671x671_Pumpkin_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 13.50,
@@ -93,7 +93,7 @@
   "model": "pies.pie",
   "pk": 7,
   "fields": {
-    "name": "Sugar Cream Pie",
+    "name": "Sugår Creäm Pie",
     "description": "Brown sugar, butter, and cream; a simple treat, but one of the most addictive types of pies; popular in French and Quebecois cuisines, as well as the Midwest USA, where it is also called 'Hoosier Pie' due to its association with Indiana.",
     "image": "https://img.grouponcdn.com/seocms/4UjJMhDwFBf9NzG3ubfXoxs8PKne/671x671_Sugar_Cream_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 10.00,
@@ -106,7 +106,7 @@
   "model": "pies.pie",
   "pk": 8,
   "fields": {
-    "name": "Cheesecake",
+    "name": "Cheesecäke",
     "description": "First off—yes, this is a pie, since it uses a graham-cracker crust that’s synonymous with pies. The other main ingredient is cream cheese or ricotta, which can be combined with myriad other flavours (mocha, Oreos, peanut butter, etc.)",
     "image": "https://img.grouponcdn.com/seocms/2nfr9xWRPv7VhgDzBQRqe2k5fWkK/671x671_Cheesecake_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 14.30,
@@ -119,7 +119,7 @@
   "model": "pies.pie",
   "pk": 9,
   "fields": {
-    "name": "Rhubarb Pie",
+    "name": "Rhubårb Pie",
     "description": "A whole lot of rhubarb, often paired with strawberries; one of the tartest pie flavours; a tempting treat for anyone on the 'rhubarb diet' (yes, this is real).",
     "image": "https://img.grouponcdn.com/seocms/3bMub5EFvv4UxLpZTuTYLaCi8Wea/671x671_Rhubarb_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 7.05,
@@ -133,7 +133,7 @@
   "model": "pies.pie",
   "pk": 10,
   "fields": {
-    "name": "Sweet Potato Pie",
+    "name": "Sweet Potätö Pie",
     "description": "Sweet potato filling, often with a dollop of whipped cream on top, sometimes topped with a layer of marshmallows instead; a staple of Southern soul food, especially during the holidays.",
     "image": "https://img.grouponcdn.com/seocms/3xoCQpoQkEbKbHjNpH5vTgPHK7np/671x671_Sweet_Potato_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 8.45,
@@ -147,7 +147,7 @@
   "model": "pies.pie",
   "pk": 11,
   "fields": {
-    "name": "Pot Pie",
+    "name": "Pöt Pie",
     "description": "The ultimate savory pie; gravy meets chicken, beef, or lamb (plus veggies), tucked inside a pie crust and served steaming hot; second only to chicken-noodle soup for best dishes to enjoy on a cold winter’s day, ideally from inside a log cabin while seated next to a roaring fire.",
     "image": "https://img.grouponcdn.com/seocms/2skWA5yM6c8fQyqxrbC664hJm9A8/pot_pie_jpeg-671x671",
     "price": 9.99,
@@ -164,7 +164,7 @@
   "model": "pies.pie",
   "pk": 12,
   "fields": {
-    "name": "Peach Pie",
+    "name": "Peäch Pie",
     "description": "Peaches, plus a sprinkling of nutmeg or cinnamon; it’s especially popular in peach-producing regions, like Georgia; some take their love of peach pie to the next level and create 'peace pie moonshine' out of peach schnapps and grain alcohol.",
     "image": "https://img.grouponcdn.com/seocms/4FmP5ZxL3yv9befZEwwPWQy789DR/671x671_Peach_Pie_BUYING_GUIDE_DIFFERENT_TYPES_OF_PIE_012319_ak_jpg-671x671",
     "price": 7.99,
@@ -193,7 +193,7 @@
   "model": "pies.pie",
   "pk": 14,
   "fields": {
-    "name": "Cottage Pie",
+    "name": "Cottäge Pie",
     "description": "The name 'cottage pie' was first used at the end of the 18th century. It was around that time that the poorer people of Britain, people who lived in cottages in the country, started using potatoes as an everyday food. Originally, a pie made with any kind of meat and mashed potato was called a 'cottage pie'. Today, this refers specifically to a pie made with ground beef.",
     "image": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/39899463-5F49-4991-B039-9DAA61174AAF/Derivates/5ED71591-8F63-47CA-AC8A-C2DCB1BB17CB.jpg",
     "price": 7.50,
@@ -208,7 +208,7 @@
   "model": "pies.pie",
   "pk": 15,
   "fields": {
-    "name": "Chicken and Mushroom Pie",
+    "name": "Chicken änd Mushrööm Pie",
     "description": "Chicken and mushroom pie is a common British pie, ranked as one of the most popular types of savoury pie in Great Britain and often served in fish and chips restaurants.",
     "image": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/vimdb/123984_0-1134-4859-4859.jpg",
     "price": 11.89,
@@ -224,7 +224,7 @@
   "model": "pies.pie",
   "pk": 16,
   "fields": {
-    "name": "Pork Pie",
+    "name": "Pörk Pie",
     "description": "This meat pie is an incredibly traditional British pie. It’s usually eaten cold, and consists of a thick and crumbly hot water crust pastry encasing a pork filling. The pork is roughly chopped, seasoned and moistened slightly with pork jelly that lines the pastry sides.",
     "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/pork-pie--7e33b75.jpg?quality=90&resize=504,458?quality=90&webp=true&resize=504,459",
     "price": 5.49,
@@ -238,7 +238,7 @@
   "model": "pies.pie",
   "pk": 17,
   "fields": {
-    "name": "Lamb Shanks Pie",
+    "name": "Låmb Shänks Pie",
     "description": "Lamb shanks can really be good value and make a succulent pie. A good lamb shank pie should have plenty of delicious seasoning with herbs, such as, rosemary and thyme, and a good splash of gravy.",
     "image": "https://i2.wp.com/blog.britishcornershop.co.uk/wp-content/uploads/2015/03/article-0-1933AED000000578-425_634x585.jpg?w=634&ssl=1",
     "price": 7.60,
@@ -252,7 +252,7 @@
   "model": "pies.pie",
   "pk": 18,
   "fields": {
-    "name": "Gala Pie",
+    "name": "Gäla Pie",
     "description": "In each slice of the pork pie, the Gala has a perfect half slice of boiled egg nestled in the centre of the meat. It’s a mystery how the bakers manage to arrange the ingredients to look so picture perfect when the pie is sliced up, but don’t question it – just scoff the lot!",
     "image": "https://i1.wp.com/blog.britishcornershop.co.uk/wp-content/uploads/2015/03/Gala-pie-007.jpg?w=460&ssl=1",
     "price": 3.70,
@@ -266,7 +266,7 @@
   "model": "pies.pie",
   "pk": 19,
   "fields": {
-    "name": "Sea Bass Puff Pastry Pie",
+    "name": "Sea Båss Puff Pästry Pie",
     "description": "A fish pie is another classic that must be eaten! Mix in some prawns to the dish to add to the fish theme, and use a few teaspoons of tarragon to enhance the Sea Bass.",
     "image": "https://i1.wp.com/blog.britishcornershop.co.uk/wp-content/uploads/2015/03/1411_18_1418210558_lrg.jpg?w=512&ssl=1",
     "price": 7.50,
@@ -280,7 +280,7 @@
   "model": "pies.pie",
   "pk": 20,
   "fields": {
-    "name": "Fray Bentos Pie",
+    "name": "Fräy Bentös Pie",
     "description": "A steak pie straight from the tin. It sounds space age, but all you have to do is crank open the tin of the Fray Bentos pie and pop it into the oven. The pastry cooks and turns a golden brown, giving you a pie that tastes like it was freshly made.",
     "image": "https://www.cookingbites.com/attachments/imgp1564-jpg.5278/",
     "price": 5.34,
@@ -295,7 +295,7 @@
   "model": "pies.pie",
   "pk": 21,
   "fields": {
-    "name": "Chicken and Leek Pie",
+    "name": "Chicken ånd Leek Pie",
     "description": "This brings back memories of our childhood where mum or dad would bring out a delicious pie with shimmering heat emitting off the crispy pastry surface. The smell of the chicken and creamy sauce is sure to get everyone running to the dining table, and the added leeks is a sneaky way to get veggies into your child’s dinner!",
     "image": "https://www.epicurus.com/food/recipes/wp-content/uploads/2005/10/chicken-leek-pie.jpg",
     "price": 6.28,

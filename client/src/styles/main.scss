@@ -1,6 +1,7 @@
 
 @import '_slick.scss';
 @import '_slickTheme.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
 
 $ikea-blue: #175fac;
 $ikea-yellow: #FFDA1A;
@@ -49,6 +50,10 @@ main {
 //Overrides the main tag styling on these pages
 .narrow-page {
   width: 60%;
+}
+
+.noto-sans {
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .blue-background {
@@ -138,7 +143,7 @@ main {
 .homepage {
 
   h1 {
-    font-family: 'Black Ops One', cursive;
+    font-family: 'Noto Sans', sans-serif;
     text-align: center;
     font-size: 2.8rem;
   }

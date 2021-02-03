@@ -32,7 +32,7 @@ function Register() {
     <main className="narrow-page box">
       <div className="ui container fly-in">
         <section className={`register-form-container ${errors ? 'register-error-form-container ' : ''}`}>
-          <h1>Sign Up</h1>
+          <h1 className="noto-sans">Sign Up</h1>
           <div className="form-box ui form error">
             <Form
               onSubmit={handleSubmit}>

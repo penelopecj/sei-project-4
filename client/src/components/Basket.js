@@ -90,7 +90,7 @@ function Basket() {
 
   return (
     <main className="narrow-page">
-      <h1>Shopping Bag</h1>
+      <h1 className="noto-sans">Shöpping Bag</h1>
       <p>Please review and cofirm your order.</p>
       
       {basketItems && basketItems.length > 0 ?

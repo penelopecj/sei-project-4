@@ -73,7 +73,7 @@ function Index() {
         </p>
         <p>Pies</p>
       </div>
-      <h1>All pies</h1>
+      <h1 className="noto-sans">Äll Pies</h1>
       {categories ?
         <div className="categories-wrapper">
           {categories.map(category => {

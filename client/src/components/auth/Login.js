@@ -37,7 +37,7 @@ function Login() {
       
         <section className="login-form-container">
           <div className="container-for-login">
-            <h1>Login</h1>
+            <h1 className="noto-sans">Login</h1>
             <div className="form-box ui form error">
 
               <Form

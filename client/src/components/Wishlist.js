@@ -25,7 +25,7 @@ function Wishlist() {
 
   return (
     <main>
-      <h1>Wish List</h1>
+      <h1 className="noto-sans">Wish List</h1>
       <p>Manage your <u>Wish lists</u></p>
       <section className="wishlist">
         {user ?

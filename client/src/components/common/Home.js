@@ -5,7 +5,7 @@ function Home() {
 
   return (
     <main className="homepage">
-      <h1>Welcome to PIEKEA</h1>
+      <h1 className="noto-sans">Welcome to PIEKEA</h1>
       <p className="slogan">Online store for fresh baked pies and custom creations. You can even build your own!</p>
       <section className="yellow-background order-online">
         <h3>Order online to collect safely in store, or for home delivery</h3>
@@ -13,7 +13,7 @@ function Home() {
         <button>Read more</button>
       </section>
       <div className="homepage-slider-section">
-        <h2>Pie Taster Selection</h2>
+        <h2 className="noto-sans">Pie Taster Selectiön</h2>
         <PieSlider />
       </div>
     </main>

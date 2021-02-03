@@ -28,7 +28,7 @@ function Profile() {
 
   return (
     <main className="profile-page">
-      <h1>My Account</h1>
+      <h1 className="noto-sans">My Åccöunt</h1>
       {user ?
         <section className="box">
           <h2>Hello, {user.firstName} {user.lastName}!</h2>
