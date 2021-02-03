@@ -33,7 +33,7 @@ nav {
 }
 
 main {
-  margin: 2rem auto;
+  margin: 0.5rem auto;
   width: 80%;
   padding-bottom: 4rem;
 }
@@ -72,6 +72,11 @@ main {
   border-bottom: 2px solid black;
 }
 
+.bread-crumbs {
+  border-bottom: 1px solid $light-grey;
+  padding-bottom: 1rem;
+}
+
 .space-between {
   display: flex;
   justify-content: space-between;
@@ -86,6 +91,10 @@ main {
   min-height: 80px;
 }
 
+.black-ops-one {
+  font-family: 'Black Ops One', cursive;
+}
+
 .logo {
   color: $ikea-blue;
   background-color: $ikea-blue;
@@ -97,13 +106,37 @@ main {
     display: flex;
   }
   p {
+    font-family: 'Work Sans', sans-serif;
     font-size: 1.7rem;
-    font-weight: bold;
+    letter-spacing: 2px;
     margin: 0;
   }
   small {
     font-size: 0.6rem;
   }
+}
+
+.homepage {
+
+  h1 {
+    font-family: 'Black Ops One', cursive;
+    text-align: center;
+    font-size: 2.8rem;
+  }
+
+  .slogan {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  h2 {
+    margin-top: 2rem;
+  }
+
 }
 
 .product-index {
@@ -127,7 +160,10 @@ main {
 
   figure {
     width: 100%;
+    max-height: 230px;
+    overflow: hidden;
     margin: 0 auto;
+    border-radius: 7px;
   }
 
   img {

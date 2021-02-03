@@ -52,6 +52,8 @@ function Index() {
 
   return (
     <main>
+      <p className="bread-crumbs">Bakery &gt; Pies</p>
+      <h1>All pies</h1>
       {categories ?
         <div className="categories-wrapper">
           {categories.map(category => {

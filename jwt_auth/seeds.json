@@ -3,7 +3,7 @@
   "model": "jwt_auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$216000$EndEtMUXlKYV$Mufp2CpfOTib6oW0vaCoBPKOSFJ1pLv0gt+qoZykTqQ=",
+    "password": "admin",
     "last_login": "2021-01-28T14:28:23.721Z",
     "is_superuser": true,
     "username": "admin",
@@ -11,17 +11,15 @@
     "is_active": true,
     "date_joined": "2021-01-28T14:27:49.956Z",
     "email": "admin@email.com",
-    "first_name": "Admin",
-    "last_name": "istrator",
-    "address": "123 Fun Street",
-    "phone_number": "123456789",
+    "first_name": "Anna",
+    "last_name": "Lytical",
+    "address": "123 Dev Street",
+    "phone_number": "10110100110",
     "profile_image": "https://i.stack.imgur.com/l60Hf.png",
     "groups": [],
     "user_permissions": [],
     "favourites": [
-      1,
-      6,
-      12
+      2
     ]
   }
 },
@@ -40,39 +38,13 @@
     "first_name": "Jack",
     "last_name": "May",
     "address": "10 General Assembly",
-    "phone_number": "123456778",
-    "profile_image": "https://i.stack.imgur.com/l60Hf.png",
+    "phone_number": "0123456789",
+    "profile_image": "https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/14618/Screen_Shot_2019-05-30_at_16.42.14.png",
     "groups": [],
     "user_permissions": [],
     "favourites": [
-      9,
-      13,
-      15
-    ]
-  }
-},
-{
-  "model": "jwt_auth.user",
-  "pk": 3,
-  "fields": {
-    "password": "pbkdf2_sha256$216000$m6q7ZO2FrfhY$C/QEaVQPVyW1Vm4sjkmf11KWeQMXBKf3JXvGoudiGMw=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "penny",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2021-01-28T14:40:05.574Z",
-    "email": "penny@email.com",
-    "first_name": "Penny",
-    "last_name": "Jungreis",
-    "address": "123 djsnvdfjsv",
-    "phone_number": "123456789",
-    "profile_image": "https://i.stack.imgur.com/l60Hf.png",
-    "groups": [],
-    "user_permissions": [],
-    "favourites": [
-      1,
-      4,
+      16,
+      14,
       8
     ]
   }
@@ -84,6 +56,31 @@
     "password": "pass",
     "last_login": null,
     "is_superuser": false,
+    "username": "penny",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-28T14:40:05.574Z",
+    "email": "penny@email.com",
+    "first_name": "Penny",
+    "last_name": "Jungreis",
+    "address": "21 Jump Street",
+    "phone_number": "0123456789",
+    "profile_image": "https://media-exp1.licdn.com/dms/image/C5603AQGzDmsaDpx4Aw/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=iuQWSJ8HZmReOYyxV6llNdehIr8zvfnRDkQSVU1kmCg",
+    "groups": [],
+    "user_permissions": [],
+    "favourites": [
+      3,
+      11
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pass",
+    "last_login": null,
+    "is_superuser": false,
     "username": "edwyn",
     "is_staff": false,
     "is_active": true,
@@ -91,15 +88,91 @@
     "email": "edwyn@email.com",
     "first_name": "Edwyn",
     "last_name": "Abi-Acar",
-    "address": "123 djsnvdfjsv",
-    "phone_number": "123456789",
-    "profile_image": "https://i.stack.imgur.com/l60Hf.png",
+    "address": "10 Downing Street",
+    "phone_number": "0123456789",
+    "profile_image": "https://pbs.twimg.com/profile_images/529199325788651520/Y0ydQazh.jpeg",
     "groups": [],
     "user_permissions": [],
     "favourites": [
       2,
       5,
       16
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pass",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "noa",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-28T14:40:05.574Z",
+    "email": "noa@email.com",
+    "first_name": "Noa",
+    "last_name": "Filosof",
+    "address": "10 General Assembly",
+    "phone_number": "0123456789",
+    "profile_image": "https://d2h1pu99sxkfvn.cloudfront.net/b0/4543280/563927696_rGuW8UBfJx/U5.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "favourites": [
+      2,
+      5,
+      16
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pass",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "charlotte",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-28T14:40:05.574Z",
+    "email": "charlotte@email.com",
+    "first_name": "Charlotte",
+    "last_name": "Morgan",
+    "address": "10 General Assembly",
+    "phone_number": "0123456789",
+    "profile_image": "https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/20206/IMG_5116.jpg",
+    "groups": [],
+    "user_permissions": [],
+    "favourites": [
+      2,
+      5
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pass",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "lee",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-28T14:40:05.574Z",
+    "email": "lee@email.com",
+    "first_name": "Lee",
+    "last_name": "Burgess",
+    "address": "10 General Assembly",
+    "phone_number": "0123456789",
+    "profile_image": "https://media-exp1.licdn.com/dms/image/C4D35AQHIZKr7dqO25Q/profile-framedphoto-shrink_800_800/0/1612177527986?e=1612400400&v=beta&t=LkB4YFFU7qKtUkZuNkleDuS61E73jAH75kymHGW2R4Y",
+    "groups": [],
+    "user_permissions": [],
+    "favourites": [
+      2,
+      5
     ]
   }
 }
