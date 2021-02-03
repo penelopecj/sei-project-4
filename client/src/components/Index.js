@@ -4,7 +4,7 @@ import { getAllPies, getAllCategories } from './lib/api'
 
 function Index() {
 
-
+  //const [selection, setSelection] = React.useState([])
   const [pies, setPies] = React.useState(null)
   const [categories, setCategories] = React.useState(null)
   //const [hasError, setHasError] = React.useState(false)
@@ -37,6 +37,20 @@ function Index() {
     }
     getData()
   }, [])
+
+
+  // const handleFilterPies = (event, button) => {
+  //   let select = selection
+  //   if (pies) {
+  //     select.includes(button)
+  //     setSelection()
+  //   const results = pies.filter(pie => {
+  //     return pie.categories.includes(parseInt(event.target.id))
+  //   })
+  //   setPies(results)
+  // }
+  // }
+
 
   const handleFilterPies = (event) => {
     const results = pies.filter(pie => {
