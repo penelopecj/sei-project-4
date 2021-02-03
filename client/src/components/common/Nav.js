@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useHistory } from 'react-router-dom'
+import { isAuthenticated, logout } from '../lib/auth'
 // import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar'
 // import 'react-pro-sidebar/dist/css/styles.css'
 // import { slide as Menu } from 'react-burger-menu'
@@ -8,7 +9,14 @@ import { Link } from 'react-router-dom'
 
 
 function Nav() {
+  useLocation()
+  const isLoggedIn = isAuthenticated()
+  const history = useHistory()
 
+  const handleLogout = () => {
+    logout()
+    history.push('/') // logs out & returns user to homepage
+  }
 
   return (
     // <nav>
@@ -61,14 +69,22 @@ function Nav() {
             work_outline
           </span>
         </Link>
-        <div className="flex-box">
-          <Link to="/register">
-            <p className="black-outline">Register</p>
-          </Link>
-          <Link to="/login">
-            <p className="black-outline">Login</p>
-          </Link>
-        </div>
+        {!isLoggedIn ? 
+          <div className="flex-box">
+            <Link to="/register">
+              <p className="black-outline">Register</p>
+            </Link>
+            <Link to="/login">
+              <p className="black-outline">Login</p>
+            </Link>
+          </div>
+          :
+          <div className="flex-box">
+            <Link>
+              <p className="black-outline" onClick={handleLogout}>Logout</p>
+            </Link>
+          </div>
+        }
       </section>
     </nav>
   )
