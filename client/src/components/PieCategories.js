@@ -4,7 +4,7 @@ import { Container } from 'semantic-ui-react'
 import { useParams, Link } from 'react-router-dom'
 import { CSSGrid, layout } from 'react-stonecutter'
 
-function PieCategoriesView() {
+function PieCategories() {
 
   const [pies, setPies] = React.useState([])
   const [activeCategory] = React.useState('View All')
@@ -194,4 +194,4 @@ function PieCategoriesView() {
 
 }
 
-export default PieCategoriesView
+export default PieCategories

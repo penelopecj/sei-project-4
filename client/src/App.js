@@ -11,7 +11,7 @@ import Basket from './components/Basket'
 import Index from './components/Index'
 import Show from './components/Show'
 import PieCreate from './components/PieCreate'
-import PieCategoriesView from './components/PieCategories'
+import PieCategories from './components/PieCategories'
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/pies/category/:id" component={PieCategoriesView} />
+        <Route path="/pies/category/:id" component={PieCategories} />
         <Route path="/pies/:id/customise" component={PieCreate} />
         <Route path="/pies/:id" component={Show} />
         <Route path="/profile" component={Profile} />
