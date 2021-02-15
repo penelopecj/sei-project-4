@@ -75,7 +75,7 @@ function Nav() {
               <p className="black-outline">Register</p>
             </Link>
             <Link to="/login">
-              <p className="black-outline">Logout</p>
+              <p className="black-outline">Login</p>
             </Link>
           </div>
           :
