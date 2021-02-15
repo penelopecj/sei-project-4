@@ -5,6 +5,8 @@ import useForm from '../utils/useForm'
 import { isAuthenticated, getPayload } from './lib/auth'
 import { useParams, Link, useHistory } from 'react-router-dom'
 
+import defaultImage from '../images/defaultImage.jpg'
+
 import {
   //Checkbox,
   //Button,
@@ -168,7 +170,7 @@ function Show() {
                   pie.reviews.map(review => (
                     <Comment key={review.id} value={review.id} className="box review">
                       <Comment.Avatar
-                        src={review.owner.profileImage} className="avatar" />
+                        src={review.owner.profileImage ? review.owner.profileImage : defaultImage}  className="avatar" />
                       <Comment.Content>
                         {/* <Comment.Author as='a'>{review.owner.username}</Comment.Author> */}
                         <Comment.Metadata>

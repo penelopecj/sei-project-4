@@ -364,5 +364,19 @@
         16
     ]
   }
+},
+{
+  "model": "pies.pie",
+  "pk": 26,
+  "fields": {
+    "name": "Boston Cream Pie",
+    "description": "A Boston cream pie is an American dessert consisting of a yellow butter cake filled with custard or cream and topped with chocolate glaze. The dessert acquired its name when cakes and pies were cooked in the same pans, and the words were used interchangeably.",
+    "image": "https://www.chocolatemoosey.com/wp-content/uploads/2020/04/Mini-Boston-Cream-Pie-For-Two-recipe-photo-0556.jpg",
+    "price": 10.25,
+    "categories": [
+        1,
+        18
+    ]
+  }
 }
 ]

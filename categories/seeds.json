@@ -117,5 +117,12 @@
     "fields": {
       "name": "Nuts"
     }
+  },
+  {
+    "model": "categories.category",
+    "pk": 18,
+    "fields": {
+      "name": "Chocolate"
+    }
   }
 ]
