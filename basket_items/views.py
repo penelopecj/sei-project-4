@@ -35,7 +35,7 @@ class BasketListView(APIView):
 
 
 class BasketDetailView(APIView):
-    """ Controller for delete requests to /basket_item/id(pk) endpoint """
+    """ Controller for delete and edit requests to /basket_item/id(pk) endpoint """
 
     permission_classes = (IsAuthenticated, )
 
