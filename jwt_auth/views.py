@@ -77,7 +77,8 @@ class UserDetailView(APIView):
         
     def put(self, request, pk):
         user_to_update = User.objects.get(pk=pk)
-        updated_user = FavouritesUserSerializer(user_to_update, data=request.data)
+        updated_user = UserSerializer(user_to_update, data=request.data)
+        # FavouritesUserSerializer need to go back on here
         if updated_user.is_valid():
             updated_user.save()
             return Response(updated_user.data, status=status.HTTP_202_ACCEPTED)

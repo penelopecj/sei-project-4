@@ -5,3 +5,5 @@
 Site by Edwyn and Penny
 
 This was my favourite project ever!
+
+![homepage gif](./client/src/images/homepage.gif)

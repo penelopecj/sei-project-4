@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 // import { isAuthenticated } from './lib/auth'
 import { getSingleUser } from './lib/api'
 // import { getPayload, getToken } from './lib/auth'
+import defaultImage from '../images/defaultImage.jpg'
 
 function Profile() {
 
@@ -36,7 +37,7 @@ function Profile() {
             {user.profileImage ?
               <img src={user.profileImage} alt="profile image" />
               :
-              <img src="../images/defaultImage.jpg" alt="profile image" />
+              <img src={defaultImage} alt="profile image" />
             }
           </figure>
           <h3>Your details are shown below:</h3>

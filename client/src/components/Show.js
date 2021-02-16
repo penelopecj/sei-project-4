@@ -2,7 +2,7 @@ import React from 'react'
 import { getSinglePie, createBasketItem, addReview, deleteReview, getSingleUser, editUser } from './lib/api'
 
 import useForm from '../utils/useForm'
-import { isAuthenticated, getPayload } from './lib/auth'
+import { isAuthenticated, getPayload, isOwner } from './lib/auth'
 import { useParams, Link, useHistory } from 'react-router-dom'
 
 import defaultImage from '../images/defaultImage.jpg'
@@ -179,9 +179,11 @@ function Show() {
                         </Comment.Metadata>
                         <Comment.Text>{review.text}</Comment.Text>
                         <Comment.Text>{'★'.repeat(review.rating)} </Comment.Text>
-                        {/* {isOwner(review.owner ? review.owner.id : '') && */}
-                        <button onClick={() => handleDeleteReview(review.id)}>Delete</button>
-                        {/* } */}
+                        {isOwner(review.owner ? review.owner.id : '') ?
+                          <button onClick={() => handleDeleteReview(review.id)}>Delete</button>
+                          :
+                          <br />
+                        }
                       </Comment.Content>
                     </Comment>
                   ))
