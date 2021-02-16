@@ -1,6 +1,6 @@
 # 🇸🇪 PIEKEA - A Django & React App
 
-A Django, PostgresSQL, React full-stack app. My second pair project for General Assembly's Software Engineering Immersive.
+A Django, PostgresSQL, React full-stack app. My final project for General Assembly's Software Engineering Immersive.
 
 ### Developed by:
 * Penny Jungreis - [GitHub](https://github.com/penelopecj)
