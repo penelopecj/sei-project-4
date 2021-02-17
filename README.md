@@ -217,10 +217,6 @@ class BasketDetailView(APIView):
 
 ![nav bar](./client/src/images/small-nav.png)
 
-* I used simple CSS and Google fonts to make text that looked like the IKEA logo.
-
-![PIEKEA Logo](./client/src/images/pikea-logo-nav.png)
-
 * Wrote the GET and POST requests to display the basic info about the pies on a "show all" index page, display more detail about indivdual products on the show page if you click on one, and create a new pie with the customise feature.
 
 ![All Pies page](./client/src/images/index.png)
@@ -241,7 +237,7 @@ export function getSinglePie(id) {
 
 ![Apple pie page](./client/src/images/show-apple-pie.png)
 
-* Next I built a **♡** button and separate wish list component. This required going back to the back end to write a special serializer for the users that would only require the `favourites: []` array to get updated on a given user object in the database.
+* Next, I built a **♡** button and separate wish list component. This required going back to the backend to write a special serializer for the users that would only require the `favourites: []` array to get updated on a given user object in the database.
 
 ```
 class FavouritesUserSerializer(serializers.ModelSerializer):
@@ -252,17 +248,54 @@ class FavouritesUserSerializer(serializers.ModelSerializer):
 
 ![Wish List page](./client/src/images/wish-list.png)
 
-* Next
+**Function for ♡ Button**
+```
+const handleAddToWishlist = async () => {
+  const favIds = user.favourites.map(fav => {
+    return fav.id
+  })
+  await editUser(payload.sub, { favourites: [ ...favIds, pie.id ] })
+}
+```
 
-
-
-
+**JSX Code for Wish List**
+```
+{user.favourites.map(fav => {
+  return (
+    <li key={fav.id} className="box">
+      <Link to={`pies/${fav.id}`} className="flex-box space-between">
+        <figure>
+          <img src={fav.image} alt={fav.name} />
+        </figure>
+        <div>
+          <h3>{fav.name}</h3>
+          <h4>£{fav.price.toFixed(2)}</h4>
+          <p>{fav.description}</p>
+        </div>
+      </Link>
+    </li>
+  )
+})}
+```
 
 
 ## DAYS 5 & 6
-* I thought it would be more difficult, but this was incredibly easy to add with JavaScript.
+* I preferred to style as I went along to ensure we would not run out of time for CSS at the end of the week. Especially for a clone site, I wanted to make sure it looked a lot like IKEA.
 
-**Array method in the JSX to show the total cost of the items in the basket, accounting for quantities**
+![Day 4 slack chat](./client/src/images/day4.png)
+
+* I was very happy with how my styling for the basket page turned out, much like the IKEA basket.
+
+**PIEKEA Basket (COPY)**
+![PIEKEA basket page](./client/src/images/piekea-basket.png)
+
+**IKEA Basket (ORIGINAL)**
+![IKEA basket page](./client/src/images/ikea-basket1.png)
+![IKEA basket page](./client/src/images/ikea-basket2.png)
+
+
+* I added an array method in the JSX to show the total cost of the items in the basket, accounting for quantities. I thought it would be more difficult, but this was incredibly easy to add with JavaScript.
+
 ```
 <p className="total">£{basketItems.reduce((acc, curr) => {
   return acc + (curr.product.price * curr.quantity)
@@ -271,7 +304,12 @@ class FavouritesUserSerializer(serializers.ModelSerializer):
 ```
 
 
+* I used simple CSS and Google fonts to make text that looked like the IKEA logo.
+
+![PIEKEA Logo](./client/src/images/pikea-logo-nav.png)
+
 ## WINS
+* We had just enough time at the end of the week to add some IKEA-esque fonts to the site and include söme Swedish letters in the heåders and seeds däta (in homage to IKEA's hömelånd).
 
 
 
@@ -291,7 +329,9 @@ class FavouritesUserSerializer(serializers.ModelSerializer):
 
 ![User login page](./client/src/images/login.png)
 
+* We would often run into errors in the evening when we were working seperately on different features, but Slack was a huge help for communication and keeping track of errors for the next morning.
 
+![Day 3 slack message](./client/src/images/day3.png)
 
 
 * **Read the docs for whatever technologies / frameworks / API's you use**.
