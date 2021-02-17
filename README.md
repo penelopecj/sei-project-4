@@ -210,15 +210,56 @@ class BasketDetailView(APIView):
 
 ## DAYS 3 & 4
 * We were running ahead of schedule, so we took some time to re-evaluate our MVP and add in additional features from our wish list to the current sprint.
-
-
-
+* We added a React front end to our project and divided up the router and component setup.
 * My partner preferred to style using Semantic UI and I preferred to style using SASS, so we installed both on our project to use.
+* We opted to use Axios for REST front end side as it makes it easier to edit and delete items from the database.
+* I built the nav bar with flexbox and Material Icons.
+
+![nav bar](./client/src/images/small-nav.png)
+
+* I used simple CSS and Google fonts to make text that looked like the IKEA logo.
+
+![PIEKEA Logo](./client/src/images/pikea-logo-nav.png)
+
+* Wrote the GET and POST requests to display the basic info about the pies on a "show all" index page, display more detail about indivdual products on the show page if you click on one, and create a new pie with the customise feature.
+
+![All Pies page](./client/src/images/index.png)
+
+```
+export function getAllPies() {
+  return axios.get(`${baseUrl}/pies/`)
+}
+
+export function createPie(formdata) {
+  return axios.post(`${baseUrl}/pies/`, formdata, headers())
+}
+
+export function getSinglePie(id) {
+  return axios.get(`${baseUrl}/pies/${id}/`)
+}
+```
+
+![Apple pie page](./client/src/images/show-apple-pie.png)
+
+* Next I built a **♡** button and separate wish list component. This required going back to the back end to write a special serializer for the users that would only require the `favourites: []` array to get updated on a given user object in the database.
+
+```
+class FavouritesUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("favourites", )
+```
+
+![Wish List page](./client/src/images/wish-list.png)
+
+* Next
 
 
 
 
-## Days 5 & 6
+
+
+## DAYS 5 & 6
 * I thought it would be more difficult, but this was incredibly easy to add with JavaScript.
 
 **Array method in the JSX to show the total cost of the items in the basket, accounting for quantities**
@@ -229,6 +270,26 @@ class BasketDetailView(APIView):
 </p>
 ```
 
+
+## WINS
+
+
+
+## CHALLENGES OVERCOME
+* We had some trouble figuring out how to store hashed passwords in our seeds data so we could create multiple users on seeding. We figured out we could create one user manually, dump the data into a seeds file, and then copy that hashed password for all users to start with.
+
+```
+"password": "pbkdf2_sha256$216000$RVlWaEcAABtL$UGP+lwcmVDE27T/XVnPCDFRG75CYIYGladDEvIvZxG0=",
+"last_login": null,
+"is_superuser": false,
+"username": "charlotte",
+"is_staff": false,
+"is_active": true,
+"date_joined": "2021-01-28T14:40:05.574Z",
+"email": "charlotte@email.com",
+```
+
+![User login page](./client/src/images/login.png)
 
 
 
@@ -242,3 +303,9 @@ class BasketDetailView(APIView):
 * **Make it all well-formatted.** Are you indenting, consistently? Can we find the start and end of every div, curly brace, etc?
 * **Comment your code.** Will someone understand what is going on in each block or function? Even if it's obvious, explaining the what & why means someone else can pick it up and get it.
 
+
+
+Credits
+
+Google fonts
+Material Icons
