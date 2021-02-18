@@ -400,7 +400,7 @@ function useEditQuantityForm(initialState) {
     editingArray[event.target.id].quantity = value
 
     const nextErrorState = { ...errors, [event.target.name]: '' }
-    
+
     setFormdata(editingArray)
     setErrors(nextErrorState)
   }
@@ -431,29 +431,73 @@ const handleEditFromBasket = async (event) => {
 * I used a custom React hook to handle the form state manipulation and checkboxes on the customise pie form. Used an object spread to create a new object every time, triggering the React state to change and the browser to re-render.
 
 ```
-function useForm(initialState) {
+function useCheckboxForm(initialState) {
   const [formdata, setFormdata] = React.useState(initialState)
+  const [errors, setErrors] = React.useState(initialState)
 
   const handleChange = event => {
-    setFormdata({ ...formdata, [event.target.name]: event.target.value })
+    const value = event.target.type === 'checkbox' ? JSON.parse(event.target.value) : event.target.value
+
+    const nextState = { ...formdata, categories: [...formdata.categories, value] }
+    const nextErrorState = { ...errors, [event.target.name]: '' }
+    
+    setFormdata(nextState)
+    setErrors(nextErrorState)
   }
 
   return {
     formdata,
+    setFormdata,
+    errors,
     handleChange,
+    setErrors
   }
 }
-export default useForm
+export default useCheckboxForm
 ```
 
-* This feature was inspired by the Domino's custom pizza builder in style and functionality. It was very tricky to manage the checkboxes, even with using the custom hook above.
+* This feature was inspired by the Domino's custom pizza builder in style and functionality. It was very tricky to manage the checkboxes UI and JSX, even with using the custom hook I wrote above.
 
+I had to make sure that all of the datatypes were converted correctly from objects to arrays, to states, back to arrays, to strings, to numbers, etc...
 ```
-
+categories.map(category => {
+  return (
+    <div key={category.id}>
+      <label>{category.name} </label>
+      <input 
+        type="checkbox" 
+        onChange={handleChange} 
+        value={JSON.stringify(category)}
+        checked={formdataCategories.some(object => object.name === category.name)}
+      />
+    </div>
+  
+  )
+})
 ```
 
 ![Custom pie form](./client/src/images/custom-form.png)
 
+___
+
+![Custom pie submit button](./client/src/images/custom-submit.png)
+
+* This was probably the most satisfying piece of code to write in the whole project after spending so much time wrangling the data to get manipulated by this form. I realised I had complete control over the the object that was added to the pies and baskets database and could change whatever I wanted at will!
+
+```
+const handleSubmit = async (event) => {
+  event.preventDefault()
+  const unPopulatedCategories = formdata.categories.map(object => {
+    return object.id
+  })
+  try {
+    const { data } = await createPie({ ...formdata, name: `Custom ${formdata.name}`, price: `${formdata.price + 10}`, reviews: [], categories: unPopulatedCategories, image: 'https://farm9.staticflickr.com/8333/8391597635_2af90bd702.jpg' })
+    handleAddToBasket(data)
+  } catch (err) {
+    setErrors(err.response.data.errors)
+  }
+}
+```
 ![Day 6 Slack chat](./client/src/images/day6.png)
 
 ![Custom pie in basket](./client/src/images/custom-pie.png)
