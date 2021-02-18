@@ -1,6 +1,6 @@
 import React from 'react'
 
-function useCheckoutForm(initialState) {
+function useCheckboxForm(initialState) {
   const [formdata, setFormdata] = React.useState(initialState)
   const [errors, setErrors] = React.useState(initialState)
 
@@ -33,4 +33,4 @@ function useCheckoutForm(initialState) {
     setErrors
   }
 }
-export default useCheckoutForm
+export default useCheckboxForm

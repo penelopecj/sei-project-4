@@ -13,9 +13,6 @@ function PieCreate() {
   const { formdata, setFormdata, handleChange, setErrors } = useCheckboxForm({
     categories: []
   })
-  // ({
-  //   categories: []
-  // })
 
   React.useEffect(() => {
     const getData = async () => {

@@ -325,6 +325,18 @@ const handleRemoveFromBasket = async (event) => {
 }
 ```
 
+* I built a display for the reviews with photos, names, timestamp, and star rating. If a user does not have a profile photo, it will display an anonymous photo as a placeholder. Only the user who left the review can delete the review.
+
+![apple pie reviews](./client/src/images/reviews.png)
+
+## FINAL DAY
+
+![Final slack chat](./client/src/images/day7.png)
+
+* We had just enough time at the end of the week to add some IKEA-esque fonts to the site and include söme Swedish letters in the heåders and seeds däta (in homage to IKEA's hömelånd).
+* I suddenly realised we didn't have a **Logout** button 30 minutes before the presentation and built one in very quickly right before we presented our project. What a rush!
+
+
 ## WINS
 * My partner and I worked hard to get only the quantity of one pie basket item to update using a number input in a mapped JSX element.
 ```
@@ -375,7 +387,26 @@ const handleRemoveFromBasket = async (event) => {
 }
 ```
 
-* We updated the numbers in state first and then sent the PUT request to the database when the user clicks on "**Update item**".
+* We updated the numbers in state first.
+```
+function useEditQuantityForm(initialState) {
+  const [formdata, setFormdata] = React.useState(initialState)
+  const [errors, setErrors] = React.useState(initialState)
+
+  const handleChange = event => {
+    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value
+
+    const editingArray = [...formdata]
+    editingArray[event.target.id].quantity = value
+
+    const nextErrorState = { ...errors, [event.target.name]: '' }
+    
+    setFormdata(editingArray)
+    setErrors(nextErrorState)
+  }
+```
+
+Then sent the PUT request to the database when the user clicks on "**Update item**".
 
 ```
 const handleEditFromBasket = async (event) => {
@@ -414,9 +445,18 @@ function useForm(initialState) {
 }
 export default useForm
 ```
-* We had just enough time at the end of the week to add some IKEA-esque fonts to the site and include söme Swedish letters in the heåders and seeds däta (in homage to IKEA's hömelånd).
 
+* This feature was inspired by the Domino's custom pizza builder in style and functionality. It was very tricky to manage the checkboxes, even with using the custom hook above.
 
+```
+
+```
+
+![Custom pie form](./client/src/images/custom-form.png)
+
+![Day 6 Slack chat](./client/src/images/day6.png)
+
+![Custom pie in basket](./client/src/images/custom-pie.png)
 
 ## CHALLENGES OVERCOME
 * We had some trouble figuring out how to store hashed passwords in our seeds data so we could create multiple users on seeding. We figured out we could create one user manually, dump the data into a seeds file, and then copy that hashed password for all users to start with.
@@ -438,19 +478,36 @@ export default useForm
 
 ![Day 3 slack message](./client/src/images/day3.png)
 
+## Key Learnings
+For the category filters on the `Index.js` page, we initially tried to adapt code from another project my partner had worked on. However, this consumed a lot of time, and because we had set up our data and datatypes differently to the other project, this tactic proved to be more time spent than saved. The old code can be viewed in `PieCategories.js`. I ended up starting from scratch to use a much simpler filter function on the `pies` state that stored all of the pies data from a GET request.
+```
+const handleFilterPies = (event) => {
+  const results = pies.filter(pie => {
+    return pie.categories.includes(parseInt(event.target.id))
+  })
+  setPies(results)
+}
+```
+And to clear the filters and display all pies again:
+```
+const handleClearFilter = async () => {
+  const { data } = await getAllPies()
+  setPies(data)
+}
+```
+The takeaway for me was that it only makes sense to adapt existing code if it is similar enough to not need to write much. In this case, I spent much more time trying to untangle the old code than I eventually spent writing the new code.
 
-* **Read the docs for whatever technologies / frameworks / API's you use**.
-* **Write your code DRY** and **build your APIs RESTful**.
-* **Be consistent with your code style.** You're working in teams, but you're only making one app per team. Make sure it looks like a unified effort.
-* **Commit early, commit often.** Don't be afraid to break something because you can always go back in time to a previous version.
-* **Keep user stories small and well-defined**, and remember – user stories focus on what a user needs, not what development tasks need accomplishing.
-* **Write code another developer wouldn't have to ask you about**. Do your naming conventions make sense? Would another developer be able to look at your app and understand what everything is?
-* **Make it all well-formatted.** Are you indenting, consistently? Can we find the start and end of every div, curly brace, etc?
-* **Comment your code.** Will someone understand what is going on in each block or function? Even if it's obvious, explaining the what & why means someone else can pick it up and get it.
+![meat pies](./client/src/images/meat-filter.png)
+
+## Unresolved Issues
+* Sliding nav bar in SideBar.js
+* PieCategories.js
 
 
-
-Credits
+## Features Wish List
+* Users can uncheck categories/ingredients on the custom pie builder.
+* Users can delete pies if they are the creator.
+## Credits
 
 Google fonts
 Material Icons
