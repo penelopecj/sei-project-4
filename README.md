@@ -337,7 +337,7 @@ const handleRemoveFromBasket = async (event) => {
 ![Final slack chat](./client/src/images/day7.png)
 
 * We had just enough time at the end of the week to add some IKEA-esque fonts to the site and include söme Swedish letters in the heåders and seeds däta (in homage to IKEA's hömelånd).
-* I suddenly realised we didn't have a **Logout** button 30 minutes before the presentation and built one in very quickly right before we presented our project. What a rush!
+* I suddenly realised we didn't have a **Logout** button 30 minutes before the presentation and built one very quickly right before we presented our project. What a rush!
 
 
 ## Wins
