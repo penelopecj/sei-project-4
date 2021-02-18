@@ -18,14 +18,14 @@ Feel free to register your own account, or you can use mine `penny@email.com` an
 ## Concept
 **PIEKEA** has some similarities to the popular Swedish furniture store, [IKEA](https://www.ikea.com/gb/en/). Both stores include a robust e-commerce platform and the option to build and customise the products. However, while IKEA sells a wide variety of home and outdoor furniture, PIEKEA sells a delicious selection of freshly baked pies to be eaten at home or in the outdoors. A variety of sweet and savoury pies available, while supplies last.
 
-N.B.: There are no actual pies involved.
+N.B.: The pies are not actually for sale.
 
 ## Project Brief
 * One week to plan, build, and test our final project with a focus on cementing the learning from the past 11 weeks and showing off our new Python skills.
 * Choose to work solo, as a pair, or as a group for the duration of the project.
 * Review project proposal with our instructor so we can make sure it can be accomplished in the limited time we have.
 * Build a full-stack application by making our own backend and front-end.
-* Use a Python Django API, using Django REST Framework to serve our data from a Postgres database.
+* Use a Python Django API, using Django REST Framework to serve our data from a PostgresSQL database.
 * Consume our API with a separate frontend built with React.
 * Build a complete product, which most likely means multiple relationships and CRUD functionality for at least a couple of models.
 * Implement thoughtful user stories/wireframes that are significant enough to help us know which features are core MVP and which can be cut.
@@ -43,6 +43,7 @@ N.B.: There are no actual pies involved.
   * React.js
   * HTML5
   * CSS3 + SASS
+  * Semantic UI
 * **Dependencies**:
   * djangorestframework
   * djangorestframework-camel-case
@@ -53,7 +54,6 @@ N.B.: There are no actual pies involved.
   * react-router-dom
   * simple-react-lightbox
   * JSONWebToken
-  * Semantic UI
 * **Development Tools**:
   * VS Code
   * Git + GitHub
@@ -67,7 +67,7 @@ N.B.: There are no actual pies involved.
 2. Run `pipenv install` in the root directory to install all packages from Pipfile.
 3. Run `pipenv shell` in the root directory to spawn a shell within the virtual environment.
 4. Use `python manage.py runserver` to start the backend server in the root driectory.
-5. Open up a second terminal and `cd client`.
+5. Open a second terminal and `cd client`.
 6. Use `yarn` or `npm` in your client directory to install all dependencies from the `package.json` file.
 7. Run `yarn start` from client to start the frontend.
 
@@ -566,6 +566,6 @@ All icons from [Material Design](https://material.io/resources/icons/).
 
 All fonts provided by [Google Fonts](https://fonts.google.com/).
 
-Some styles from Semantic UI.
+Some styles from [Semantic UI](https://semantic-ui.com/).
 
-Website inspired by IKEA.
+Website inspired by [IKEA](https://www.ikea.com/gb/en/).
