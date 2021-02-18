@@ -278,7 +278,6 @@ const handleAddToWishlist = async () => {
 })}
 ```
 
-
 ## DAYS 5 & 6
 * I preferred to style as I went along to ensure we would not run out of time for CSS at the end of the week. Especially for a clone site, I wanted to make sure it looked a lot like IKEA.
 
@@ -294,6 +293,101 @@ const handleAddToWishlist = async () => {
 ![IKEA basket page](./client/src/images/ikea-basket2.png)
 
 
+* I used simple CSS and Google fonts to make text that looked like the IKEA logo.
+
+![PIEKEA Logo](./client/src/images/pikea-logo-nav.png)
+
+* I added a simple function to the pie product page to add to basket, which imports a function to use `axios.post`.
+```
+const handleAddToBasket = async () => {
+  try {
+    await createBasketItem({
+      quantity: 1,
+      product: id
+    })
+    history.push('/basket')
+  } catch (err) {
+    console.log(err)
+  }
+}
+```
+
+* I added a function to delete a pie from the basket, which imports a function to use `axios.delete`.
+```
+const handleRemoveFromBasket = async (event) => {
+  try {
+    await deleteBasketItem(event.target.id)
+    const { data } = await getAllBasketItems()
+    setBasketItems(data) 
+  } catch (err) {
+    console.log(err)
+  }
+}
+```
+
+## WINS
+* My partner and I worked hard to get only the quantity of one pie basket item to update using a number input in a mapped JSX element.
+```
+{basketItems.map((item, index) => {
+  return (
+    <div className="flex-box basket-item" key={item.id}>
+      <figure>
+        <img src={item.product.image} alt={item.product.name} />
+      </figure>
+      <div>
+        <h3>{item.product.name}</h3>
+        <p><strong>£{item.product.price.toFixed(2)}</strong></p>
+        {item.product.categories.length > 0 ?
+          <ul>
+            {item.product.categories.map(category => {
+              return (
+                <li key={category.id}>{category.name}</li>
+              )
+            })}
+          </ul>
+          :
+          <ul></ul>
+        }
+        <div className="change-quantity">
+          <p>Quantity: </p>
+          <input 
+            placeholder={item.quantity}
+            onChange={handleChange} 
+            id={index} 
+            name="quantity" 
+            type="number" 
+            max="15"
+            min="1"
+            value={formdata.quantity} 
+          />
+          <button 
+            onClick={handleEditFromBasket} 
+            id={item.id} 
+            className={index} 
+          >Update item</button>
+        </div>
+        <p onClick={handleRemoveFromBasket} id={item.id} className="remove-add-btn">Remove</p>
+        <p onClick={handleAddToWishlist} id={item.product.id}className="remove-add-btn">Add to your wish list</p>
+      </div>
+    </div>
+  )
+})
+}
+```
+
+* We updated the numbers in state first and then sent the PUT request to the database when the user clicks on "**Update item**".
+
+```
+const handleEditFromBasket = async (event) => {
+  try {
+    await updateBasketItem(event.target.id, formdata[parseInt(event.target.className)]) 
+    const { data } = await getAllBasketItems()
+    setBasketItems(data)
+  } catch (err) {
+    console.log(err)
+  }
+}
+```
 * I added an array method in the JSX to show the total cost of the items in the basket, accounting for quantities. I thought it would be more difficult, but this was incredibly easy to add with JavaScript.
 
 ```
@@ -303,12 +397,23 @@ const handleAddToWishlist = async () => {
 </p>
 ```
 
+* I used a custom React hook to handle the form state manipulation and checkboxes on the customise pie form. Used an object spread to create a new object every time, triggering the React state to change and the browser to re-render.
 
-* I used simple CSS and Google fonts to make text that looked like the IKEA logo.
+```
+function useForm(initialState) {
+  const [formdata, setFormdata] = React.useState(initialState)
 
-![PIEKEA Logo](./client/src/images/pikea-logo-nav.png)
+  const handleChange = event => {
+    setFormdata({ ...formdata, [event.target.name]: event.target.value })
+  }
 
-## WINS
+  return {
+    formdata,
+    handleChange,
+  }
+}
+export default useForm
+```
 * We had just enough time at the end of the week to add some IKEA-esque fonts to the site and include söme Swedish letters in the heåders and seeds däta (in homage to IKEA's hömelånd).
 
 
