@@ -77,15 +77,13 @@ N.B.: The pies are not actually for sale.
 
 ![Database diagram](./client/src/images/database-diagram.png)
 
-**Wireframe**
+**Wireframe & User Story**
 
 ![Wireframe](./client/src/images/wireframe.png)
 ## General Approach & Planning
 * My partner and I began by mocking up a basic wireframe and plan for the app on a Google Doc (above).
 * We next created an entity relationship diagram (ERD) for our database tables and relationships (above).
-* We tried not to get caught up in too many awesome features and to keep the project fairly simple. 
 * We decided to build an e-commerce site that could handle unlimited user accounts and keeping track of the products in their baskets. That was our core MVP - we only added in additional features once we realised we were running ahead of schedule.
-* We focussed on the design first, beginning by planning our user stories and wireframes before writing any code.
 * We set up a Trello board for project management and task delegation.
 
 ![trello board](./client/src/images/trello.png)
