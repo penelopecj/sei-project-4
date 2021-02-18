@@ -99,7 +99,7 @@ N.B.: There are no actual pies involved.
 
 ![slack message](./client/src/images/day2.png)
 
-### DAYS 1 & 2
+## Days 1 & 2
 * We started out by scaffolding the backend, adding the PostgresSQL database, writing seeds data, and installing dependencies. All of this went surprisingly smoothly, which showed us we had come a long way from our first projects.
 * Using Django, I set up the "apps" for pies, users, reviews, categories, and basket items. These are quite quick to do with Django, so I had time to write the models, urls, and views for all of these.
 
@@ -208,7 +208,7 @@ class BasketDetailView(APIView):
 
 
 
-## DAYS 3 & 4
+## Days 3 & 4
 * We were running ahead of schedule, so we took some time to re-evaluate our MVP and add in additional features from our wish list to the current sprint.
 * We added a React front end to our project and divided up the router and component setup.
 * My partner preferred to style using Semantic UI and I preferred to style using SASS, so we installed both on our project to use.
@@ -278,7 +278,7 @@ const handleAddToWishlist = async () => {
 })}
 ```
 
-## DAYS 5 & 6
+## Days 5 & 6
 * I preferred to style as I went along to ensure we would not run out of time for CSS at the end of the week. Especially for a clone site, I wanted to make sure it looked a lot like IKEA.
 
 ![Day 4 slack chat](./client/src/images/day4.png)
@@ -329,7 +329,7 @@ const handleRemoveFromBasket = async (event) => {
 
 ![apple pie reviews](./client/src/images/reviews.png)
 
-## FINAL DAY
+## Final Day
 
 ![Final slack chat](./client/src/images/day7.png)
 
@@ -337,7 +337,7 @@ const handleRemoveFromBasket = async (event) => {
 * I suddenly realised we didn't have a **Logout** button 30 minutes before the presentation and built one in very quickly right before we presented our project. What a rush!
 
 
-## WINS
+## Wins
 * My partner and I worked hard to get only the quantity of one pie basket item to update using a number input in a mapped JSX element.
 ```
 {basketItems.map((item, index) => {
@@ -502,7 +502,7 @@ const handleSubmit = async (event) => {
 
 ![Custom pie in basket](./client/src/images/custom-pie.png)
 
-## CHALLENGES OVERCOME
+## Challenges Overcome
 * We had some trouble figuring out how to store hashed passwords in our seeds data so we could create multiple users on seeding. We figured out we could create one user manually, dump the data into a seeds file, and then copy that hashed password for all users to start with.
 
 ```
@@ -543,15 +543,29 @@ The takeaway for me was that it only makes sense to adapt existing code if it is
 
 ![meat pies](./client/src/images/meat-filter.png)
 
-## Unresolved Issues
-* Sliding nav bar in SideBar.js
-* PieCategories.js
-
+## Unsolved Problems
+* We didn't have enough time to get the sliding nav bar working in `SideBar.js`.
+* `PieCategories.js` never made it onto the final website because we could not convert the existing code into the format we needed.
 
 ## Features Wish List
-* Users can uncheck categories/ingredients on the custom pie builder.
+* Users can _un_-check categories on the custom pie builder and remove them from the categories array, instead of just adding more.
 * Users can delete pies if they are the creator.
+* UI styling to show which categories are selected of the filters on `Index.js`.
+* A search bar to check for full or partial product matches on `Index.js`.
+* Responsive design for smaller screens.
+* Use Cloudinary or other third party service to handle profile photo uploads.
+* Designate "seller" users who can own and add new pies for sale.
+* Display the average rating for each product.
+* Like button for reviews.
+* Display top-voted pies and reviews on homepage.
+
+✨ ***PRs welcome!*** ✨
 ## Credits
 
-Google fonts
-Material Icons
+All icons from [Material Design](https://material.io/resources/icons/).
+
+All fonts provided by [Google Fonts](https://fonts.google.com/).
+
+Some styles from Semantic UI.
+
+Website inspired by IKEA.
