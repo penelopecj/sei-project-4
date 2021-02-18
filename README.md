@@ -88,10 +88,10 @@ N.B.: The pies are not actually for sale.
 
 ![trello board](./client/src/images/trello.png)
 
-* We followed an Agile system for starting each day with a standup meeting for the two of us, followed by a standup for the group leaders of each group on the course.
+* We followed an Agile system for starting each day with a standup for the two of us, followed by a standup for the group leaders of each group on the course.
 * We split up all of our tasks into the first MVP sprint or the second optional extras sprint. We used Trello to track who was working on what and to let each other know when we had finished a task or needed help.
 * I used Trello and Slack to write pseudocode to think through the logic and steps of the more complicated features.
-* By this point on the General Assembly course, I felt quite confident about my pair-coding, communication, and project management systems. This allowed us to get started writing actual code very quickly on the first day.
+* By this point in the course, I felt quite confident about my pair-coding, communication, and project management systems. This allowed us to get started writing actual code very quickly on the first day.
 * I used Slack and frequent commits to let my partner know what I was working on and what I had pushed to our shared git development branch.
 
 ![slack message](./client/src/images/day1.png)
@@ -128,7 +128,7 @@ class PopulatedBasketSerializer(BasketSerializer):
 ```
 
 * I migrated each new app as I made changes and let my partner know to do the same.
-* I tested each new RESTful route I added to the models using Insomnia as well as Django's built in admin page.
+* I tested each new RESTful route I added to the models using Insomnia as well as Django's built-in admin page.
 
 **POST request on Insomnia**
 
@@ -216,9 +216,15 @@ class BasketDetailView(APIView):
 
 ![nav bar](./client/src/images/small-nav.png)
 
-* Wrote the GET and POST requests to display the basic info about the pies on a "show all" index page, display more detail about indivdual products on the show page if you click on one, and create a new pie with the customise feature.
+* I wrote GET requests to display the basic info about the pies on a "show all" index page.
 
 ![All Pies page](./client/src/images/index.png)
+
+* And a separate request and page to display more detail about indivdual products on the show page if you click on one.
+
+![Apple pie page](./client/src/images/show-apple-pie.png)
+
+* And an Axios POST function to create a new pie with the customise feature.
 
 ```
 export function getAllPies() {
@@ -233,8 +239,6 @@ export function getSinglePie(id) {
   return axios.get(`${baseUrl}/pies/${id}/`)
 }
 ```
-
-![Apple pie page](./client/src/images/show-apple-pie.png)
 
 * Next, I built a **♡** button and separate wish list component. This required going back to the backend to write a special serializer for the users that would only require the `favourites: []` array to get updated on a given user object in the database.
 
