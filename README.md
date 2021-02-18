@@ -78,6 +78,7 @@ N.B.: The pies are not actually for sale.
 ![Database diagram](./client/src/images/database-diagram.png)
 
 **Wireframe**
+
 ![Wireframe](./client/src/images/wireframe.png)
 ## General Approach & Planning
 * My partner and I began by mocking up a basic wireframe and plan for the app on a Google Doc (above).
